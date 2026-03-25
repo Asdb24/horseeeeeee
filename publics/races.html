@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal Racing | Races</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">
+        <span class="logo-icon" aria-hidden="true">🏆</span>
+        <span class="logo-text">Royal Racing</span>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="races.html" data-i18n="nav.races">All Races</a>
+        <a href="horses.html" data-i18n="nav.horses">Horses</a>
+        <a href="jockeys.html" data-i18n="nav.jockeys">Jockeys</a>
+        <a href="hall-of-fame.html" data-i18n="nav.hall">Hall of Fame</a>
+      </nav>
+      <div class="header-tools">
+        <label class="language-select" aria-label="Select language">
+          <span class="globe" aria-hidden="true">🌐</span>
+          <select class="js-language">
+            <option value="en">EN</option>
+            <option value="ja">日本語</option>
+            <option value="vi">Tiếng Việt</option>
+          </select>
+        </label>
+        <button class="ghost-button" data-action="tickets" data-i18n="header.tickets">My Tickets (0)</button>
+        <button class="ghost-button" data-action="login" data-i18n="header.login">Login</button>
+        <button class="primary-button" data-action="signup" data-i18n="header.signup">Sign up</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section page-hero">
+        <div class="section-header">
+          <p class="eyebrow" data-i18n="races.eyebrow">Upcoming Tickets</p>
+          <h1 data-i18n="races.title">Races currently selling tickets</h1>
+          <p data-i18n="races.subtitle">Verified races in the USA, Japan, and the UK with active ticket inventory.</p>
+        </div>
+      </section>
+
+      <section id="races" class="section">
+        <div class="section-header">
+          <h2 data-i18n="races.featuredTitle">Featured Races</h2>
+          <p data-i18n="races.featuredSubtitle">Upcoming marquee events with real-time countdowns and official data.</p>
+        </div>
+        <div class="cards" id="featured-races"></div>
+      </section>
+
+      
+    </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footer.copy">© 2025 Royal Racing. Built for verified racing fans worldwide.</p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="modal" id="tickets-modal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 data-i18n="tickets.title">My Tickets</h3>
+          <button class="icon-button" data-close="tickets-modal">✕</button>
+        </div>
+        <div class="modal-body" id="tickets-list"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="login-modal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 data-i18n="auth.loginTitle">Login</h3>
+          <button class="icon-button" data-close="login-modal">✕</button>
+        </div>
+        <form class="modal-body form-grid" id="login-form">
+          <label>
+            <span data-i18n="auth.userLabel">Username or email</span>
+            <input type="text" name="identifier" required />
+          </label>
+          <label>
+            <span data-i18n="auth.passwordLabel">Password</span>
+            <input type="password" name="password" required />
+          </label>
+          <button class="primary-button" type="submit" data-i18n="auth.loginButton">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="signup-modal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 data-i18n="auth.signupTitle">Sign up</h3>
+          <button class="icon-button" data-close="signup-modal">✕</button>
+        </div>
+        <form class="modal-body form-grid" id="signup-form">
+          <label>
+            <span data-i18n="auth.emailLabel">Email or username</span>
+            <input type="text" name="email" required />
+          </label>
+          <label>
+            <span data-i18n="auth.phoneLabel">Phone number</span>
+            <input type="tel" name="phone" required />
+          </label>
+          <label>
+            <span data-i18n="auth.passwordLabel">Password</span>
+            <input type="password" name="password" required />
+          </label>
+          <button class="primary-button" type="submit" data-i18n="auth.signupButton">Create account</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="payment-modal" aria-hidden="true">
+      <div class="modal-card payment-modal-card">
+        <div class="modal-header">
+          <h3 data-i18n="payment.title">Race Ticket Payment</h3>
+          <button class="icon-button" data-close="payment-modal">✕</button>
+        </div>
+        <form class="modal-body" id="payment-form">
+          <div class="payment-customer-info">
+            <p class="payment-section-title" data-i18n="payment.customerTitle">Customer Information</p>
+            <label>
+              <span data-i18n="payment.customerName">Customer name</span>
+              <input type="text" id="payment-customer" name="customerName" required />
+            </label>
+          <div class="payment-method-choice">
+            <p data-i18n="payment.methodLabel">Payment Method</p>
+            <label class="radio-option">
+              <input type="radio" name="paymentMethod" value="visa_master" checked />
+              <span data-i18n="payment.methodVisaMaster">Visa/Mastercard</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="paymentMethod" value="paypal" />
+              <span data-i18n="payment.methodPaypal">PayPal</span>
+            </label>
+          </div>
+          <label>
+            <span data-i18n="payment.cardholderName">Cardholder Name</span>
+            <input type="text" id="payment-cardholder" name="cardholderName" required />
+          </label>
+          <label>
+            <span data-i18n="payment.cardNumber">Card Number</span>
+            <input type="text" id="payment-cardnumber" name="cardNumber" required />
+          </label>
+          <div class="form-row">
+            <label>
+              <span data-i18n="payment.cvv">CVV</span>
+              <input type="text" id="payment-cvv" name="cvv" required />
+            </label>
+            <label>
+              <span data-i18n="payment.expiryDate">Expiry Date</span>
+              <input type="text" id="payment-expiry" name="expiryDate" placeholder="MM/YY" required />
+            </label>
+          </div>
+          <label>
+            <span data-i18n="payment.address">Home Address</span>
+            <input type="text" id="payment-address" name="address" required />
+          </label>
+          </div>
+          <div class="payment-top-info">
+            <div class="payment-race-summary" id="payment-race-summary"></div>
+            <div class="tier-choice" id="payment-tier-choice"></div>
+          </div>
+          
+          <div class="seat-selection-area">
+            <p class="seat-title" data-i18n="payment.chooseSeat">Choose your seat</p>
+            <div class="seat-stage" data-i18n="payment.trackLabel">TRACK SIDE / SCREEN</div>
+            <div class="seat-grid-container">
+              <div class="seat-grid" id="seat-grid"></div>
+            </div>
+          </div>
+
+          <div class="payment-footer">
+            <div class="payment-total" id="payment-total"></div>
+            <button class="primary-button" type="submit" data-i18n="payment.payNow">Complete Payment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
