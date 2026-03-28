@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Racing - Báo cáo đặc tả chức năng</title>
+  <style>
+    body { margin: 0; padding: 40px 56px; font-family: "Times New Roman", serif; line-height: 1.75; color: #2f1d12; background: #fffdf9; }
+    main { max-width: 1000px; margin: 0 auto; }
+    h1 { text-align: center; font-size: 31px; margin-bottom: 8px; color: #4b2f1d; }
+    h2 { font-size: 23px; margin-top: 34px; padding-bottom: 6px; border-bottom: 1px solid #eadbc3; color: #4b2f1d; }
+    p { font-size: 14px; margin: 10px 0; text-align: justify; }
+    .meta { text-align: center; color: #6d4d36; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>ROYAL RACING</h1>
+    <p class="meta">Báo cáo đặc tả chức năng của website</p>
+    <p class="meta">Cập nhật ngày 28/03/2026</p>
+
+    <h2>1. Mở đầu</h2>
+    <p>Trong bối cảnh các nền tảng trực tuyến ngày càng đóng vai trò quan trọng trong hoạt động thương mại và dịch vụ, việc xây dựng một website không chỉ dừng lại ở mức hiển thị thông tin mà cần hướng tới khả năng hỗ trợ trọn vẹn quy trình tương tác của người dùng. Royal Racing được phát triển với mục tiêu xây dựng một website đặt vé đua ngựa có giao diện đẹp, trải nghiệm rõ ràng và quy trình sử dụng liền mạch từ lúc người dùng tìm hiểu thông tin cho đến lúc hoàn tất thanh toán.</p>
+    <p>Tài liệu này được lập ra để mô tả chi tiết các chức năng hiện có của hệ thống dưới góc nhìn báo cáo đặc tả. Nội dung không đi sâu vào mã nguồn mà tập trung trình bày website đang có những tính năng gì, cách các phần hoạt động với nhau và ý nghĩa của từng nhóm chức năng trong toàn bộ hệ thống. Đây là cơ sở thuận lợi cho việc bàn giao, thuyết trình, nghiệm thu hoặc tiếp tục phát triển phần mềm sau này.</p>
+
+    <h2>2. Phạm vi đề tài</h2>
+    <p>Phạm vi của đề tài tập trung vào việc xây dựng một website đặt vé đua ngựa hoàn chỉnh ở mức sản phẩm demo nâng cao. Hệ thống bao gồm các phần chính như trang chủ giới thiệu thương hiệu, danh sách giải đua, danh sách ngựa, danh sách nài ngựa, trang Hall of Fame, chức năng đăng ký và đăng nhập, giỏ hàng vé, thanh toán, chọn ghế, xuất hóa đơn PDF và lưu dữ liệu người dùng.</p>
+    <p>Đề tài chưa hướng tới việc triển khai quy mô doanh nghiệp với cơ sở dữ liệu lớn hay cổng thanh toán thực tế, mà tập trung chứng minh khả năng xây dựng một hệ thống web full-stack có quy trình nghiệp vụ rõ ràng, có giao diện đẹp, có lưu trữ dữ liệu và có khả năng mô phỏng trải nghiệm đặt vé tương đối đầy đủ. Nói cách khác, phạm vi đề tài nằm ở việc hoàn thiện trải nghiệm người dùng và mô hình nghiệp vụ cốt lõi.</p>
+
+    <h2>3. Công nghệ sử dụng</h2>
+    <p>Website sử dụng Node.js ở phía backend để xử lý máy chủ, phục vụ static file và cung cấp các API nội bộ. Đây là lựa chọn phù hợp vì giúp triển khai gọn, đơn giản và dễ kiểm soát toàn bộ luồng dữ liệu trong một dự án quy mô vừa. Dữ liệu người dùng được lưu trong file users.json nhằm đảm bảo thông tin tài khoản không bị mất khi server khởi động lại.</p>
+    <p>Ở phía frontend, hệ thống sử dụng HTML, CSS và Vanilla JavaScript. Cách tiếp cận này giúp kiểm soát chi tiết toàn bộ giao diện và hành vi tương tác mà không phụ thuộc framework lớn. Ngoài ra, website còn sử dụng jsPDF để tạo hóa đơn PDF và localStorage để lưu một số trạng thái ở phía người dùng như ngôn ngữ đang chọn, thông tin phiên đăng nhập và trạng thái vé. Tập hợp công nghệ này phù hợp với một sản phẩm demo có tính hoàn chỉnh về chức năng.</p>
+
+    <h2>4. Mô hình hoạt động của website và hệ thống</h2>
+    <p>Mục này được hiểu là phần mô tả mô hình vận hành tổng quát của hệ thống, chứ không phải sơ đồ vẽ. Royal Racing là một website đặt vé đua ngựa, trong đó người dùng truy cập bằng trình duyệt web để xem thông tin các giải đua, hồ sơ ngựa, hồ sơ nài ngựa, thêm vé vào giỏ, chọn ghế và hoàn tất thanh toán. Toàn bộ hệ thống được xây dựng theo mô hình full-stack, nghĩa là phần giao diện phía người dùng đảm nhận việc hiển thị thông tin và xử lý tương tác, còn phía máy chủ chịu trách nhiệm cung cấp dữ liệu, tiếp nhận yêu cầu, xác thực tài khoản, lưu thông tin người dùng và xác nhận giao dịch.</p>
+    <p>Ở góc độ nghiệp vụ, website có thể được xem như một nền tảng bán vé trực tuyến chuyên biệt cho môn đua ngựa. Người dùng đi từ bước tìm hiểu thông tin, lựa chọn giải đấu phù hợp, xem giá vé, chọn chỗ ngồi, thanh toán và nhận hóa đơn điện tử. Mô hình này giúp hệ thống không chỉ đóng vai trò trưng bày thông tin mà còn hoàn chỉnh thành một quy trình giao dịch khép kín. Ngoài ra, hệ thống còn có phần quản lý dữ liệu người dùng, lưu trạng thái phiên đăng nhập, quản lý vé đang mua và lưu trữ lịch sử giao dịch để phục vụ trải nghiệm sử dụng liên tục.</p>
+
+    <h2>5. Thành phần và nội dung trang chủ</h2>
+    <p>Mục này trình bày về trang chủ, là khu vực giới thiệu tổng quan về thương hiệu Royal Racing. Đây là trang đầu tiên mà người dùng tiếp cận, nên nó được thiết kế để truyền tải nhanh tinh thần cao cấp, mạnh mẽ và chuyên nghiệp của website. Trên trang chủ có phần tiêu đề lớn, câu thông điệp chính, hình nền hoặc hình minh họa của sự kiện đang diễn ra và các khối nội dung giới thiệu về trải nghiệm mà website mang lại. Bố cục trang chủ đóng vai trò dẫn dắt cảm xúc, giúp người dùng hiểu đây không chỉ là một website thông tin mà là một nền tảng đặt vé hoàn chỉnh.</p>
+    <p>Bên cạnh vai trò giới thiệu thương hiệu, trang chủ còn là cửa ngõ điều hướng đến các khu vực quan trọng khác như các giải đua, ngựa, nài ngựa và Hall of Fame. Từ đây, người dùng có thể dùng menu ở header để chuyển sang các trang thông tin chuyên sâu hơn. Nói cách khác, trang chủ vừa thực hiện vai trò marketing, vừa là điểm bắt đầu cho toàn bộ hành trình sử dụng website.</p>
+
+    <h2>6. Thành phần và nội dung trang các giải đua</h2>
+    <p>Mục này trình bày về trang các giải đua, là khu vực trung tâm của website về mặt bán vé. Tại đây, toàn bộ các race đang có trong hệ thống được hiển thị dưới dạng danh sách thẻ thông tin. Mỗi thẻ bao gồm tên giải đua, địa điểm tổ chức, thời gian diễn ra, số ghế còn lại, giá vé, đồng hồ đếm ngược và hình ảnh minh họa. Nhờ cách trình bày này, người dùng có thể so sánh nhanh giữa nhiều giải đua khác nhau mà không cần mở từng trang chi tiết riêng lẻ.</p>
+    <p>Bên cạnh chức năng hiển thị thông tin, trang này còn gắn liền với hành động mua vé. Trên mỗi giải đua đều có hai hướng thao tác chính là Thêm vào giỏ hàng và Mua ngay. Nếu người dùng chưa muốn thanh toán ngay, họ có thể đưa vé vào giỏ để xem lại sau. Nếu đã quyết định, họ có thể đi thẳng vào quy trình thanh toán. Về mặt trải nghiệm, trang các giải đua chính là nơi chuyển đổi từ việc xem thông tin sang hành vi mua hàng thực tế.</p>
+
+    <h2>7. Thành phần và nội dung trang ngựa</h2>
+    <p>Mục này trình bày về trang ngựa, là nơi trưng bày hồ sơ của các ngựa đua nổi bật. Mỗi ngựa được hiển thị qua một thẻ thông tin có ảnh, tên, quốc gia, màu lông, record thi đấu và các danh hiệu lớn. Mục tiêu của trang này là giúp người dùng hiểu hơn về những cá thể đang làm nên sức hút của các giải đấu, từ đó tăng cảm giác hứng thú trước khi họ ra quyết định mua vé.</p>
+    <p>Bên cạnh việc hiển thị dữ liệu cơ bản, trang ngựa còn phục vụ trải nghiệm đọc thông tin có chiều sâu. Thành tích của ngựa được hiển thị theo ngôn ngữ hiện tại của website, nghĩa là nếu người dùng đổi sang tiếng Việt thì thông tin thành tích cũng được nội địa hóa để dễ hiểu hơn. Điều này giúp nội dung bớt khô cứng và phù hợp với người dùng phổ thông hơn.</p>
+
+    <h2>8. Thành phần và nội dung trang nài ngựa</h2>
+    <p>Mục này trình bày về trang nài ngựa, tập trung vào các jockey, tức những người trực tiếp điều khiển ngựa trong cuộc đua. Mỗi nài ngựa được hiển thị qua ảnh, tên, quốc tịch, năm bắt đầu thi đấu, số trận thắng và giải thưởng hoặc thành tích tiêu biểu. Về bản chất, đây là phần nội dung giúp website mở rộng chiều sâu thông tin, vì trong môn đua ngựa, nài ngựa là yếu tố rất quan trọng tạo nên tính chuyên môn và giá trị của cuộc đua.</p>
+    <p>Bên cạnh việc trình bày hồ sơ cơ bản, nội dung về thành tích của nài ngựa còn được điều chỉnh theo ngôn ngữ giao diện. Điều đó giúp website không chỉ đẹp về hình thức mà còn có tính đồng nhất về nội dung. Khi kết hợp với ảnh minh họa và cách trình bày nổi bật, trang nài ngựa góp phần tạo ra cảm giác website được đầu tư kỹ, thay vì chỉ tập trung vào mỗi luồng bán vé.</p>
+
+    <h2>9. Thành phần và nội dung trang Hall of Fame</h2>
+    <p>Mục này trình bày về trang Hall of Fame, là khu vực tôn vinh các biểu tượng nổi bật trong lịch sử đua ngựa. Tại đây người dùng có thể nhìn thấy các nhân vật, cá thể hoặc biểu tượng tiêu biểu được trình bày theo dạng card, đi kèm với ảnh và phần mô tả ngắn. Chức năng chính của trang này không phải bán vé mà là tăng giá trị nội dung, giúp website mang tính trưng bày và kể chuyện nhiều hơn.</p>
+    <p>Bên cạnh giá trị giới thiệu, Hall of Fame còn giúp người dùng cảm nhận đây là một website có chiều sâu văn hóa và lịch sử, chứ không đơn thuần chỉ là một trang giao dịch. Điều này đặc biệt hữu ích với người dùng mới hoặc người xem có hứng thú tìm hiểu về đua ngựa như một môn thể thao, chứ không chỉ quan tâm đến việc mua vé.</p>
+
+    <h2>10. Thành phần và nội dung mục Vé của tôi</h2>
+    <p>Mục này trình bày về khu vực Vé của tôi, là nơi tập trung quản lý toàn bộ vé liên quan đến người dùng. Ở đây hệ thống hiển thị những vé đã được thêm vào giỏ hàng nhưng chưa thanh toán, đồng thời cũng lưu lại các vé đã thanh toán thành công trong lịch sử mua. Mỗi vé có thể hiển thị tên giải đua, mã vé, hạng vé, số ghế, cụm ghế, trạng thái giao dịch và các hành động liên quan. Đây là khu vực giúp người dùng không bị rối khi mua nhiều vé hoặc quay lại kiểm tra các giao dịch trước đó.</p>
+    <p>Bên cạnh vai trò lưu trữ thông tin vé, mục này còn phân tách rõ giữa trạng thái chờ thanh toán và trạng thái đã hoàn tất. Vé chờ thanh toán đóng vai trò như giỏ hàng, cho phép người dùng tiếp tục thao tác chọn ghế và thanh toán. Trong khi đó, vé đã thanh toán trở thành một dạng lịch sử mua để tra cứu. Cách tổ chức này giúp người dùng hiểu rõ mình đang ở giai đoạn nào của quá trình mua vé.</p>
+
+    <h2>11. Thành phần và nội dung khu vực thanh toán</h2>
+    <p>Mục này trình bày về khu vực thanh toán, được thiết kế dưới dạng modal hai cột để vừa gọn, vừa đủ thông tin. Ở cột bên trái, người dùng nhập các thông tin khách hàng như tên, địa chỉ, email và lựa chọn phương thức thanh toán. Nếu thanh toán bằng thẻ, hệ thống còn hỗ trợ nhập số thẻ, CVV và ngày hết hạn với định dạng kiểm soát sẵn, giúp giảm lỗi khi nhập liệu. Ngoài ra, phần chọn hạng vé Premium, Gold và Standard cũng được đặt ngay trong cụm này để người dùng xác định rõ loại vé mình đang mua.</p>
+    <p>Bên cạnh phần thông tin khách hàng, cột bên phải là sơ đồ ghế, đóng vai trò rất quan trọng trong trải nghiệm thanh toán. Sơ đồ này gồm 270 ghế, chia theo dãy và cụm, mô phỏng hình khán đài với lối đi và phân khu rõ ràng. Người dùng chỉ có thể chọn ghế phù hợp với loại vé đã chọn, ghế đã đặt trước sẽ bị làm mờ và vô hiệu hóa. Toàn bộ phần ghế được đồng bộ với thông tin tóm tắt thanh toán để người dùng biết mình đang chọn ghế nào, thuộc cụm nào và thuộc hạng vé nào trước khi xác nhận giao dịch.</p>
+
+    <h2>12. Hóa đơn PDF sau thanh toán</h2>
+    <p>Mục này trình bày về hóa đơn PDF sau thanh toán. Sau khi thanh toán thành công, hệ thống tự động tạo hóa đơn PDF để người dùng lưu lại hoặc dùng như bằng chứng giao dịch. Trong hóa đơn có các thông tin cơ bản như logo website, tên khách hàng, mã vé, số tiền thanh toán, loại vé, số ghế, cụm ghế và thời điểm phát sinh giao dịch. Đây là bước giúp hệ thống hoàn thiện một chu trình mua bán khép kín chứ không dừng lại ở việc báo thành công trên giao diện.</p>
+    <p>Bên cạnh chức năng lưu hóa đơn, nội dung của PDF cũng không cố định theo một ngôn ngữ duy nhất mà sẽ thay đổi theo ngôn ngữ mà người dùng đang chọn trên website. Điều này giúp trải nghiệm liền mạch hơn và tạo cảm giác hệ thống thực sự hỗ trợ song ngữ một cách đầy đủ, không chỉ ở giao diện mà cả ở tài liệu đầu ra.</p>
+
+    <h2>13. Chức năng đăng nhập người dùng</h2>
+    <p>Mục này trình bày về chức năng đăng nhập người dùng. Website hỗ trợ đăng ký và đăng nhập tài khoản người dùng nhằm cá nhân hóa trải nghiệm mua vé. Người dùng có thể đăng nhập bằng email hoặc tên hiển thị, sau đó hệ thống kiểm tra mật khẩu để xác định quyền truy cập. Nếu mật khẩu sai, website sẽ báo lỗi rõ ràng để người dùng biết và nhập lại. Đây là chức năng nền tảng để đảm bảo mỗi người dùng có không gian dữ liệu riêng, không bị lẫn giỏ vé hoặc lịch sử mua với người khác.</p>
+    <p>Bên cạnh việc xác thực truy cập, giao diện sau đăng nhập còn phản ánh trạng thái người dùng đã xác thực. Header hiển thị avatar và phần tài khoản cá nhân thay cho các nút đăng nhập và đăng ký cơ bản. Điều này không chỉ làm rõ trạng thái phiên hiện tại mà còn tạo cảm giác hệ thống có tính cá nhân hóa và chuyên nghiệp hơn.</p>
+
+    <h2>14. Cơ chế lưu dữ liệu người dùng</h2>
+    <p>Mục này trình bày về cơ chế lưu dữ liệu người dùng. Dữ liệu người dùng được lưu ở phía server trong file users.json thay vì chỉ giữ trong bộ nhớ tạm. Điều này giúp thông tin tài khoản như tên hiển thị, email, mật khẩu đã đăng ký, ngày sinh và avatar không bị mất khi server khởi động lại. Đối với một website có chức năng tài khoản, đây là bước cần thiết để đảm bảo tính bền vững tối thiểu của dữ liệu.</p>
+    <p>Bên cạnh cơ chế lưu ở server, website cũng sử dụng localStorage ở phía trình duyệt để giữ ngôn ngữ hiện tại, thông tin người dùng đang đăng nhập, trạng thái giỏ vé và lịch sử vé. Cách kết hợp này tạo ra trải nghiệm mượt hơn, vì người dùng không phải chọn lại ngôn ngữ hoặc mất trạng thái đang thao tác sau mỗi lần tải lại trang.</p>
+
+    <h2>15. Các tính năng nổi bật khác</h2>
+    <p>Mục này trình bày về các tính năng nổi bật khác. Ngoài các chức năng chính, website còn có nhiều điểm phụ trợ làm tăng chất lượng trải nghiệm. Hệ thống hỗ trợ đổi ngôn ngữ Việt và Anh ngay trên header, cho phép thay avatar kể cả ảnh GIF, hỗ trợ đóng modal bằng bấm ra ngoài hoặc bằng phím Escape, và dùng nhiều hiệu ứng chuyển động nhẹ cho card, nút và form để giao diện sinh động hơn. Những chi tiết này không phải là chức năng lõi nhưng góp phần lớn vào cảm nhận sử dụng.</p>
+    <p>Bên cạnh các tiện ích giao diện đã nêu, sơ đồ ghế còn có thanh kéo ngang riêng để người dùng dễ thao tác trên các khung nhỏ hơn. Scrollbar trên website cũng được đồng bộ màu sắc theo tone giao diện. Hình ảnh của race được tối ưu theo hướng vừa khung nhưng không cắt quá nhiều nội dung. Tất cả những yếu tố này kết hợp lại làm cho website có cảm giác được chăm chút kỹ hơn so với một sản phẩm demo thông thường.</p>
+
+    <h2>16. Kết quả đạt được riêng biệt</h2>
+    <p>Mục này trình bày về kết quả đạt được riêng biệt. Sau quá trình hoàn thiện, hệ thống đã đạt được một số kết quả rõ ràng. Thứ nhất, website đã hình thành được một quy trình đầy đủ từ xem thông tin, lựa chọn giải đua, thêm vào giỏ, chọn ghế, thanh toán và xuất hóa đơn PDF. Thứ hai, hệ thống đã có cơ chế quản lý tài khoản người dùng với khả năng đăng nhập, lưu hồ sơ, cập nhật avatar và duy trì trạng thái sử dụng. Thứ ba, giao diện của website đã được chỉnh sửa theo hướng thống nhất, trực quan và có tính nhận diện cao hơn so với một sản phẩm mẫu đơn giản.</p>
+    <p>Bên cạnh các kết quả trực tiếp về giao diện và nghiệp vụ, việc hỗ trợ đa ngôn ngữ, hỗ trợ lưu dữ liệu người dùng và đồng bộ hóa thông tin giữa giao diện với hóa đơn PDF cho thấy hệ thống đã vượt khỏi mức trình bày giao diện đơn thuần để tiến gần hơn đến một mô hình phần mềm có tính nghiệp vụ thực tế. Có thể xem đây là những kết quả quan trọng về cả mặt kỹ thuật lẫn trải nghiệm người dùng.</p>
+
+    <h2>17. Kết luận về ưu điểm và nhược điểm</h2>
+    <p>Mục này trình bày phần kết luận về ưu điểm và nhược điểm. Ưu điểm lớn của hệ thống là giao diện thống nhất, trực quan và có đầy đủ các luồng chức năng quan trọng như xem thông tin, quản lý vé, thanh toán, xuất hóa đơn và hỗ trợ đa ngôn ngữ. Website cũng đã có những thành phần phụ trợ tốt như lưu dữ liệu người dùng, quản lý trạng thái vé và đồng bộ nội dung giữa giao diện với file PDF. Về mặt học thuật hoặc demo sản phẩm, đây là một nền tảng đã khá hoàn chỉnh.</p>
+    <p>Bên cạnh các ưu điểm đã đạt được, hệ thống vẫn còn một số hạn chế. Dữ liệu hiện tại vẫn phụ thuộc vào mã nguồn và file JSON thay vì cơ sở dữ liệu thực. Thanh toán vẫn đang là mô phỏng nghiệp vụ, chưa tích hợp cổng thanh toán thật. Ngoài ra, phần frontend vẫn còn tập trung khá nhiều logic trong một file JavaScript lớn, nên về lâu dài nếu mở rộng mạnh thì việc bảo trì sẽ trở nên khó khăn hơn.</p>
+
+    <h2>18. Hướng phát triển phần mềm trong tương lai</h2>
+    <p>Mục này trình bày về hướng phát triển phần mềm trong tương lai. Trong tương lai, phần mềm có thể được phát triển theo hướng chuyên nghiệp hơn bằng cách chuyển dữ liệu sang cơ sở dữ liệu thật như PostgreSQL hoặc MongoDB. Khi đó hệ thống có thể quản lý tốt hơn số lượng người dùng, vé, lịch sử giao dịch và thống kê. Đồng thời, có thể bổ sung khu vực quản trị riêng để quản trị viên cập nhật danh sách giải đua, ngựa, nài ngựa và kiểm soát toàn bộ dữ liệu nội bộ.</p>
+    <p>Bên cạnh hướng mở rộng về dữ liệu và quản trị, một hướng phát triển khác là tích hợp cổng thanh toán thật như Stripe hoặc PayPal API, bổ sung email xác nhận giao dịch, gửi hóa đơn tự động và thêm dashboard thống kê doanh thu hoặc số lượng vé bán được. Về mặt kỹ thuật, frontend cũng nên được tách thành nhiều module nhỏ để dễ bảo trì, dễ kiểm thử và thuận tiện cho việc mở rộng trong các giai đoạn phát triển sau này.</p>
+  </main>
+</body>
+</html>
+
+
+
+
+
