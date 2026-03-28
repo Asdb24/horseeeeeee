@@ -165,14 +165,14 @@ const featuredRaces = [
     },
     {
         id: 'satsuki-sho',
-        name: 'Satsuki Sho (Japanese 2000 Guineas)',
+        name: 'Satsuki Sho',
         location: 'Nakayama Racecourse, Japan',
         date: '2026-04-20T15:40:00+09:00',
         distance: '2,000 m',
         horses: 18,
         seatsRemaining: 230,
         priceUSD: 135,
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Nakayama_Racecourse_2004.jpg',
+        imageUrl: 'https://en.netkeiba.com/library/image.php?id=150',
         bookedSeats: []
     },
     {
@@ -1103,7 +1103,10 @@ const news = [
 ];
 
 const sendJson = (res, statusCode, data) => {
-    res.writeHead(statusCode, { 'Content-Type': 'application/json' });
+    res.writeHead(statusCode, {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': 'no-store'
+    });
     res.end(JSON.stringify(data));
 };
 
@@ -1114,9 +1117,79 @@ const sendFile = (res, filePath, contentType) => {
             res.end('Not found');
             return;
         }
-        res.writeHead(200, { 'Content-Type': contentType });
+        const shouldAppendCharset =
+            contentType.startsWith('text/') ||
+            contentType.includes('javascript') ||
+            contentType.includes('json');
+        res.writeHead(200, {
+            'Content-Type': shouldAppendCharset ? `${contentType}; charset=utf-8` : contentType,
+            'Cache-Control': 'no-store'
+        });
         res.end(content);
     });
+};
+
+const USERS_FILE = path.join(__dirname, 'users.json');
+const UPLOADS_DIR = path.join(__dirname, 'publics', 'uploads');
+
+if (!fs.existsSync(UPLOADS_DIR)) {
+    fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+}
+
+const getUsers = () => {
+    try {
+        const data = fs.readFileSync(USERS_FILE, 'utf8');
+        return JSON.parse(data);
+    } catch (err) {
+        return [];
+    }
+};
+
+const saveUsers = (users) => {
+    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
+};
+
+if (!fs.existsSync(USERS_FILE)) {
+    saveUsers([]);
+}
+
+const readJsonBody = (req) =>
+    new Promise((resolve, reject) => {
+        let body = '';
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+        req.on('end', () => {
+            if (!body) {
+                resolve({});
+                return;
+            }
+
+            try {
+                resolve(JSON.parse(body));
+            } catch (error) {
+                reject(error);
+            }
+        });
+        req.on('error', reject);
+    });
+
+const normalizeIdentifier = (value) => String(value || '').trim().toLowerCase();
+
+const serializeUser = (user) => ({
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    avatar: user.avatar || null,
+    dob: user.dob || ''
+});
+
+const getTierIdFromSeat = (seatId) => {
+    const row = String(seatId || '').split('-')[0];
+    if (['A', 'B', 'C'].includes(row)) return 'premium';
+    if (['D', 'E', 'F'].includes(row)) return 'gold';
+    if (['G', 'H', 'I'].includes(row)) return 'standard';
+    return null;
 };
 
 const server = http.createServer((req, res) => {
@@ -1153,13 +1226,169 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    if (req.method === 'POST' && pathname === '/api/purchase') {
-        let body = '';
-        req.on('data', (chunk) => {
-            body += chunk;
+    if (req.method === 'POST' && pathname === '/api/register') {
+        readJsonBody(req).then((payload) => {
+            const name = String(payload.name || '').trim();
+            const email = String(payload.email || '').trim();
+            const password = String(payload.password || '').trim();
+            const dob = String(payload.dob || '').trim();
+
+            if (!name || !email || !password || !dob) {
+                sendJson(res, 400, { message: 'Please complete all registration fields.' });
+                return;
+            }
+
+            const users = getUsers();
+            const emailKey = normalizeIdentifier(email);
+            const nameKey = normalizeIdentifier(name);
+
+            if (users.find((user) => normalizeIdentifier(user.email) === emailKey)) {
+                sendJson(res, 400, { message: 'Email already registered.' });
+                return;
+            }
+
+            if (users.find((user) => normalizeIdentifier(user.name) === nameKey)) {
+                sendJson(res, 400, { message: 'Display name already in use.' });
+                return;
+            }
+
+            const newUser = {
+                id: `usr-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
+                name,
+                email,
+                password,
+                dob,
+                avatar: null
+            };
+
+            users.push(newUser);
+            saveUsers(users);
+            sendJson(res, 201, {
+                message: 'User registered successfully.',
+                user: serializeUser(newUser)
+            });
+        }).catch(() => {
+            sendJson(res, 400, { message: 'Invalid registration payload.' });
         });
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/login') {
+        readJsonBody(req).then((payload) => {
+            const identifier = String(payload.identifier || '').trim();
+            const password = String(payload.password || '');
+            const users = getUsers();
+
+            const user = users.find(
+                (item) =>
+                    normalizeIdentifier(item.email) === normalizeIdentifier(identifier) ||
+                    normalizeIdentifier(item.name) === normalizeIdentifier(identifier)
+            );
+
+            if (!user) {
+                sendJson(res, 404, { message: 'Account not found.' });
+                return;
+            }
+
+            if (user.password !== password) {
+                sendJson(res, 401, { message: 'Incorrect password.' });
+                return;
+            }
+
+            sendJson(res, 200, { message: 'Login successful.', user: serializeUser(user) });
+        }).catch(() => {
+            sendJson(res, 400, { message: 'Invalid login payload.' });
+        });
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/profile/update') {
+        readJsonBody(req).then((payload) => {
+            const { id, avatar } = payload;
+            const name = String(payload.name || '').trim();
+            const dob = String(payload.dob || '').trim();
+            const users = getUsers();
+            const userIndex = users.findIndex((user) => user.id === id);
+            if (userIndex === -1) {
+                sendJson(res, 404, { message: 'User not found.' });
+                return;
+            }
+
+            if (!name || !dob) {
+                sendJson(res, 400, { message: 'Display name and date of birth are required.' });
+                return;
+            }
+
+            users[userIndex] = {
+                ...users[userIndex],
+                name,
+                dob,
+                avatar: avatar || users[userIndex].avatar
+            };
+            saveUsers(users);
+            sendJson(res, 200, {
+                message: 'Profile updated.',
+                user: serializeUser(users[userIndex])
+            });
+        }).catch(() => {
+            sendJson(res, 400, { message: 'Invalid profile payload.' });
+        });
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/upload-avatar') {
+        let body = [];
+        req.on('data', chunk => body.push(chunk));
         req.on('end', () => {
-            const payload = body ? JSON.parse(body) : {};
+            const data = Buffer.concat(body);
+            try {
+                const { userId, base64 } = JSON.parse(data.toString());
+                const users = getUsers();
+                const userIndex = users.findIndex(u => u.id === userId);
+                if (userIndex === -1) {
+                    sendJson(res, 404, { message: 'User not found.' });
+                    return;
+                }
+                
+                const matches = base64.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+                if (!matches || matches.length !== 3) {
+                    sendJson(res, 400, { message: 'Invalid base64 string.' });
+                    return;
+                }
+
+                const allowedMimeTypes = {
+                    'image/png': 'png',
+                    'image/jpeg': 'jpg',
+                    'image/webp': 'webp',
+                    'image/gif': 'gif'
+                };
+                const extension = allowedMimeTypes[matches[1]];
+                if (!extension) {
+                    sendJson(res, 400, { message: 'Unsupported avatar format.' });
+                    return;
+                }
+                const fileName = `avatar-${userId}-${Date.now()}.${extension}`;
+                const filePath = path.join(UPLOADS_DIR, fileName);
+                fs.writeFileSync(filePath, Buffer.from(matches[2], 'base64'));
+
+                const avatarUrl = `/uploads/${fileName}`;
+                users[userIndex].avatar = avatarUrl;
+                saveUsers(users);
+
+                sendJson(res, 200, {
+                    message: 'Avatar uploaded.',
+                    avatar: avatarUrl,
+                    user: serializeUser(users[userIndex])
+                });
+            } catch (e) {
+                sendJson(res, 400, { message: 'Error processing upload.' });
+            }
+        });
+        return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/purchase') {
+        readJsonBody(req).then((payload) => {
             const { raceId, tierId, quantity, paymentMethod, seatId } = payload;
             const tier = ticketTiers.find((item) => item.id === tierId);
             const amount = Number(quantity);
@@ -1171,6 +1400,11 @@ const server = http.createServer((req, res) => {
 
             if (paymentMethod && paymentMethod !== 'visa_master' && paymentMethod !== 'paypal' && paymentMethod !== 'bank') {
                 sendJson(res, 400, { message: 'Invalid payment method.' });
+                return;
+            }
+
+            if (seatId && getTierIdFromSeat(seatId) !== tierId) {
+                sendJson(res, 400, { message: 'Seat does not belong to the selected tier.' });
                 return;
             }
 
@@ -1201,8 +1435,11 @@ const server = http.createServer((req, res) => {
                 message: 'Purchase confirmed.',
                 tierId: tier.id,
                 paymentMethod: paymentMethod,
+                seatId,
                 seatsRemaining: tier.seatsRemaining
             });
+        }).catch(() => {
+            sendJson(res, 400, { message: 'Invalid purchase payload.' });
         });
         return;
     }
@@ -1214,12 +1451,25 @@ const server = http.createServer((req, res) => {
         '/races.html': 'races.html',
         '/horses.html': 'horses.html',
         '/jockeys.html': 'jockeys.html',
-        '/hall-of-fame.html': 'hall-of-fame.html',
-        '/wiki.html': 'wiki.html'
+        '/hall-of-fame.html': 'hall-of-fame.html'
     };
 
     if (req.method === 'GET' && htmlRoutes[pathname]) {
         sendFile(res, path.join(publicPath, htmlRoutes[pathname]), 'text/html');
+        return;
+    }
+
+    if (req.method === 'GET' && pathname.startsWith('/uploads/')) {
+        const filePath = path.join(publicPath, pathname);
+        const ext = path.extname(filePath).toLowerCase();
+        const mimeTypes = {
+            '.png': 'image/png',
+            '.jpg': 'image/jpeg',
+            '.jpeg': 'image/jpeg',
+            '.gif': 'image/gif',
+            '.webp': 'image/webp'
+        };
+        sendFile(res, filePath, mimeTypes[ext] || 'application/octet-stream');
         return;
     }
 
@@ -1246,9 +1496,13 @@ server.listen(PORT, () => {
             : process.platform === 'win32'
                 ? 'start'
                 : 'xdg-open';
-    exec(`${start} ${urlToOpen}`, (err) => {
-        if (err) {
-            console.log('Open your browser at:', urlToOpen);
-        }
-    });
+    try {
+        exec(`${start} ${urlToOpen}`, (err) => {
+            if (err) {
+                console.log('Open your browser at:', urlToOpen);
+            }
+        });
+    } catch (error) {
+        console.log('Open your browser at:', urlToOpen);
+    }
 });

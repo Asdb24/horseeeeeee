@@ -1,68 +1,37 @@
 const translations = {
   en: {
-    nav: {
-      home: 'Home',
-      races: 'All Races',
-      horses: 'Horses',
-      jockeys: 'Jockeys',
-      hall: 'Hall of Fame',
-      wiki: 'Wiki'
-    },
-    header: {
-      tickets: 'My Tickets',
-      login: 'Login',
-      signup: 'Sign up'
-    },
+    nav: { home: 'Home', races: 'All Races', horses: 'Horses', jockeys: 'Jockeys', hall: 'Hall of Fame', wiki: 'Wiki' },
+    header: { tickets: 'My Tickets', login: 'Login', signup: 'Sign up' },
     hero: {
-      badge: 'Premium Racing Experience',
       title: 'EXPERIENCE THE THRILL OF CHAMPIONSHIP RACING',
-            subtitle:
-              'Book your tickets to the most prestigious horse racing events. Witness world-class thoroughbreds compete for glory.',
-            ctaPrimary: 'Explore races',
-      ctaSecondary: 'View ticket tiers'
-    },
-    news: {
-      title: 'News & Insights',
-      subtitle: 'Official updates from iconic venues worldwide.'
+      subtitle: 'Book premium race tickets, manage your cart, and complete checkout with reserved seating.'
     },
     home: {
-      featuredTitle: 'Featured Race',
-      featuredSubtitle: "Don't miss the biggest event of the season.",
-      viewAll: 'View all races',
-      whyTitle: 'Why Choose Royal Racing',
-      whySubtitle: 'Experience world-class horse racing with premium amenities and unmatched service.',
       benefit1Title: 'Premium Experience',
-      benefit1Body: 'VIP lounges, gourmet dining, and exclusive access to paddock areas.',
       benefit2Title: 'Secure Booking',
-      benefit2Body: 'Time-limited holds on your tickets while you complete payment securely.',
-      benefit3Title: 'Expert Insights',
-      benefit3Body: 'Detailed horse statistics, jockey profiles, and race analysis.'
+      benefit3Title: 'Expert Insights'
     },
     races: {
       eyebrow: 'Upcoming Tickets',
       title: 'Races currently selling tickets',
       subtitle: 'Verified 2026 race schedules in the USA, Japan, and the UK with active ticket inventory.',
       featuredTitle: 'Featured Races',
-      featuredSubtitle: 'Upcoming marquee events with real-time countdowns and official data.'
-    },
-    tiers: {
-      title: 'Ticket Tiers',
-      subtitle: 'Choose the view that fits your experience. Inventory updates automatically after purchase.'
+      featuredSubtitle: 'Upcoming marquee events with live countdowns and direct booking.'
     },
     horses: {
       eyebrow: 'Active Racing Horses',
       title: 'Champions competing in prestigious racing events',
-      subtitle: 'Verified records, lineage, and major titles for each horse (updated for 2026 season).'
+      subtitle: 'Verified records, lineage, and major titles for each horse.'
     },
     jockeys: {
       eyebrow: 'Professional Jockeys',
       title: 'World-class riders competing at the highest level',
-      subtitle: 'Detailed career statistics and awards from verified sources (updated for 2026 season).'
+      subtitle: 'Detailed career statistics and awards from verified sources.'
     },
     hall: {
       eyebrow: 'Hall of Fame',
       title: 'Legendary horses who made racing history',
-      subtitle: 'Retirement and memorial dates are included when available, with records refreshed for 2026.'
+      subtitle: 'Retirement and memorial dates are included when available.'
     },
     wiki: {
       eyebrow: 'Royal Racing Wiki',
@@ -75,64 +44,76 @@ const translations = {
       hallTitle: 'Hall of Fame',
       hallBody: 'Legendary horses celebrated for historic victories.'
     },
-    footer: {
-      copy: '© 2026 Royal Racing. Built for verified racing fans worldwide.'
-    },
+    footer: { copy: '\u00a9 2026 Royal Racing. Built for verified racing fans worldwide.' },
     tickets: {
       title: 'My Tickets',
-      empty: 'No tickets purchased yet.',
-      remove: 'Remove ticket',
+      cartTitle: 'Cart',
+      historyTitle: 'Purchase History',
+      empty: 'No tickets in cart.',
+      historyEmpty: 'No purchase history yet.',
+      remove: 'Remove',
+      pay: 'Select Seat & Pay',
+      invoice: 'Export Invoice PDF',
       code: 'Ticket ID',
-      seat: 'Seat Number'
+      seat: 'Seat',
+      cluster: 'Cluster',
+      tier: 'Tier',
+      status: 'Status',
+      statusPending: 'Pending Payment',
+      statusPaid: 'Paid',
+      race: 'Race'
     },
     auth: {
       loginTitle: 'Login',
       signupTitle: 'Sign up',
-      userLabel: 'Username or email',
-      emailLabel: 'Email or username',
-      phoneLabel: 'Phone number',
+      profileTitle: 'Profile',
+      userLabel: 'Email or display name',
+      displayName: 'Display Name',
+      emailLabel: 'Email',
+      dobLabel: 'Date of Birth',
       passwordLabel: 'Password',
       loginButton: 'Login',
       signupButton: 'Create account',
+      saveProfile: 'Save profile',
+      changeAvatar: 'Change avatar',
       loginSuccess: 'Logged in successfully.',
       signupSuccess: 'Account created successfully.',
+      profileSuccess: 'Profile updated.',
+      avatarSuccess: 'Avatar updated.',
       welcome: 'Welcome',
       logout: 'Logout'
     },
     payment: {
-      title: 'Race Ticket Payment',
-      customerName: 'Customer name',
-      chooseSeat: 'Choose your seat',
-      trackLabel: 'Track side',
-      seatHint: 'Premium seats are closest to the track, Gold in the middle, Standard in the top rows.',
-      tierStandard: 'Standard',
-      tierGold: 'Gold',
-      tierPremium: 'Premium',
-      tierStandardDesc: 'Upper theater rows with wide overview of the race.',
-      tierGoldDesc: 'Middle theater rows with balanced track visibility.',
-      tierPremiumDesc: 'Front theater rows nearest to the race road.',
-      race: 'Race',
-      seat: 'Seat',
-      total: 'Total',
-      payNow: 'Complete Payment',
+      title: 'Payment',
+      detailsTitle: 'Customer Details',
+      seatMapTitle: 'Seat Map',
+      name: 'Name',
+      address: 'Address',
+      email: 'Email',
       methodLabel: 'Payment Method',
-      methodVisaMaster: 'Visa/Mastercard',
+      methodVisaMaster: 'Visa / Mastercard',
       methodPaypal: 'PayPal',
       cardholderName: 'Cardholder Name',
       cardNumber: 'Card Number',
       cvv: 'CVV',
       expiryDate: 'Expiry Date',
-      address: 'Home Address'
+      month: 'MM',
+      year: 'YY',
+      race: 'Race',
+      seat: 'Seat',
+      cluster: 'Cluster',
+      tier: 'Ticket Tier',
+      total: 'Total',
+      payNow: 'Confirm Payment',
+      seatHint: 'Rows A-C: Premium, D-F: Gold, G-I: Standard.'
     },
     labels: {
       countdown: 'Countdown',
       seatsLeft: 'Seats left',
       horsesCount: 'horses',
-      buyTicket: 'Buy ticket',
-      bookTier: 'Book',
-      paymentMethod: 'Payment method',
-      bankCard: 'Bank/PayPal',
-      nextRaceStarts: 'Next Race Starts In',
+      addToCart: 'Add to Cart',
+      buyNow: 'Buy Now',
+      location: 'Location',
       schedule: 'Schedule',
       startsOn: 'Starts on',
       days: 'Days',
@@ -140,570 +121,374 @@ const translations = {
       mins: 'Mins',
       secs: 'Secs',
       liveNow: 'Live now',
-      location: 'Location',
       record: 'Record',
-      started: 'Started',
       titles: 'Major titles',
-      status: 'Status',
+      started: 'Started',
       wins: 'Wins',
       awards: 'Awards',
-      retired: 'Retired',
       memorial: 'Memorial'
     },
-    tables: {
-      horses: ['Name', 'Country', 'Color', 'Foaled', 'Started', 'Record', 'Major Titles'],
-      jockeys: ['Name', 'Birth', 'Gender', 'Status', 'Career Start', 'Wins', 'Major Awards'],
-      hall: ['Name', 'Country', 'Color', 'Foaled', 'Started', 'Record', 'Major Titles', 'Retired', 'Memorial']
-    },
     toast: {
-      purchaseOk: 'Purchase confirmed. Your ticket is secured.',
-      purchaseError: 'Invalid purchase request.'
-    }
-  },
-  ja: {
-    nav: {
-      home: 'ホーム',
-      races: '全レース',
-      horses: '競走馬',
-      jockeys: 'ジョッキー',
-      hall: '殿堂入り',
-      wiki: 'ウィキ'
+      cartAdded: 'Ticket added to cart.',
+      purchaseOk: 'Payment completed successfully.',
+      purchaseError: 'Unable to complete payment.',
+      chooseSeat: 'Please choose a seat before paying.',
+      loginRequired: 'Please log in to continue.',
+      invoiceReady: 'Invoice PDF has been generated.',
+      loadError: 'Some sections could not be loaded.'
     },
-    header: {
-      tickets: 'チケット',
-      login: 'ログイン',
-      signup: '新規登録'
-    },
-    hero: {
-      badge: 'プレミアム体験',
-      title: 'チャンピオンシップレースの興奮を体感',
-      subtitle: '世界最高峰の競馬イベントのチケットを予約。トップクラスのサラブレッドの戦いを見届けましょう。',
-      ctaPrimary: 'レースを見る',
-      ctaSecondary: 'チケット種別'
-    },
-    news: {
-      title: 'ニュースとインサイト',
-      subtitle: '世界の名門競馬場からの公式アップデート。'
-    },
-    home: {
-      featuredTitle: '注目レース',
-      featuredSubtitle: '今シーズン最大のイベントをお見逃しなく。',
-      viewAll: '全レースを見る',
-      whyTitle: 'ロイヤルレーシングが選ばれる理由',
-      whySubtitle: 'プレミアムな設備と比類なきサービスで世界最高峰の競馬体験を提供します。',
-      benefit1Title: 'プレミアム体験',
-      benefit1Body: 'VIPラウンジ、グルメダイニング、パドックへの特別アクセス。',
-      benefit2Title: '安全な予約',
-      benefit2Body: '決済完了までチケットを確保できる安全な予約システム。',
-      benefit3Title: '専門的な分析',
-      benefit3Body: '詳細な競走馬データとジョッキーの分析情報。'
-    },
-    races: {
-      eyebrow: '販売中チケット',
-      title: '現在販売中のレース',
-      subtitle: '米国・日本・英国の2026年公式レースを掲載。',
-      featuredTitle: '注目レース',
-      featuredSubtitle: '最新のカウントダウンと公式データを提供。'
-    },
-    tiers: {
-      title: 'チケット種別',
-      subtitle: '体験に合わせて選択。購入後は在庫が自動更新されます。'
-    },
-    horses: {
-      eyebrow: '現役競走馬',
-      title: '主要レースで活躍するチャンピオン',
-      subtitle: '血統、実績、主要タイトルを掲載（2026年シーズン更新）。'
-    },
-    jockeys: {
-      eyebrow: 'プロジョッキー',
-      title: 'トップレベルで戦うライダー',
-      subtitle: '公式記録に基づく詳細なキャリアデータ（2026年更新）。'
-    },
-    hall: {
-      eyebrow: '殿堂入り',
-      title: '競馬史に名を刻んだ名馬',
-      subtitle: '引退・追悼日がある場合は記載（2026年更新）。'
-    },
-    wiki: {
-      eyebrow: 'ロイヤルレーシングWiki',
-      title: '競走馬・ジョッキー・伝説の情報データベース',
-      subtitle: '実在データに基づいたセクションを参照。',
-      horsesTitle: '競走馬',
-      horsesBody: '現役・近年のチャンピオン情報。',
-      jockeysTitle: 'ジョッキー',
-      jockeysBody: 'キャリア実績と受賞歴。',
-      hallTitle: '殿堂入り',
-      hallBody: '歴史的勝利を収めた名馬。'
-    },
-    footer: {
-      copy: '© 2026 Royal Racing. 認証済みレースファンのために。'
-    },
-    tickets: {
-      title: 'チケット一覧',
-      empty: '購入済みチケットはありません。',
-      remove: 'チケットを削除',
-      code: 'チケットコード',
-      seat: '座席番号'
-    },
-    auth: {
-      loginTitle: 'ログイン',
-      signupTitle: '新規登録',
-      userLabel: 'ユーザー名またはメール',
-      emailLabel: 'メールまたはユーザー名',
-      phoneLabel: '電話番号',
-      passwordLabel: 'パスワード',
-      loginButton: 'ログイン',
-      signupButton: '登録する',
-      loginSuccess: 'ログインしました。',
-      signupSuccess: 'アカウントを作成しました。',
-      welcome: 'ようこそ',
-      logout: 'ログアウト'
-    },
-    payment: {
-      title: 'レースチケット決済',
-      customerName: '購入者名',
-      chooseSeat: '座席を選択',
-      trackLabel: 'トラック側',
-      seatHint: 'プレミアムは最前列、ゴールドは中央列、スタンダードは上段列です。',
-      tierStandard: 'スタンダード',
-      tierGold: 'ゴールド',
-      tierPremium: 'プレミアム',
-      tierStandardDesc: '上段シアター席で全体を見渡せます。',
-      tierGoldDesc: '中段シアター席でバランスの良い視界。',
-      tierPremiumDesc: 'トラックに最も近い最前列シアター席。',
-      race: 'レース',
-      seat: '座席',
-      total: '合計',
-      payNow: '決済を完了する',
-      methodLabel: '支払い方法',
-      methodVisaMaster: 'Visa/Mastercard',
-      methodPaypal: 'PayPal',
-      cardholderName: 'カード名義',
-      cardNumber: 'カード番号',
-      cvv: 'CVV',
-      expiryDate: '有効期限',
-      address: '住所'
-    },
-    labels: {
-      countdown: 'カウントダウン',
-      seatsLeft: '残席',
-      horsesCount: '頭',
-      buyTicket: 'チケット購入',
-      bookTier: '予約',
-      paymentMethod: '支払い方法',
-      bankCard: '銀行/PayPal',
-      nextRaceStarts: '次のレース開始まで',
-      schedule: '日程',
-      startsOn: '開催日',
-      days: '日',
-      hours: '時間',
-      mins: '分',
-      secs: '秒',
-      liveNow: '開催中',
-      location: '開催地',
-      record: '成績',
-      started: '開始年',
-      titles: '主要タイトル',
-      status: '状態',
-      wins: '勝利数',
-      awards: '受賞',
-      retired: '引退',
-      memorial: '追悼'
-    },
-    tables: {
-      horses: ['名前', '国', '毛色', '生年月日', '開始年', '成績', '主要タイトル'],
-      jockeys: ['名前', '生年月日', '性別', '状態', '開始年', '勝利数', '主要受賞'],
-      hall: ['名前', '国', '毛色', '生年月日', '開始年', '成績', '主要タイトル', '引退', '追悼']
-    },
-    toast: {
-      purchaseOk: '購入が確定しました。',
-      purchaseError: '購入内容が無効です。'
+    invoice: {
+      title: 'Ticket Invoice',
+      thanks: 'Thank you for using our service.',
+      customer: 'Customer',
+      ticketId: 'Ticket ID',
+      amount: 'Amount',
+      ticketType: 'Ticket Type',
+      seatNumber: 'Seat Number',
+      cluster: 'Cluster',
+      timestamp: 'Time'
     }
   },
   vi: {
-    nav: {
-      home: 'Trang chủ',
-      races: 'Tất cả chặng đua',
-      horses: 'Ngựa',
-      jockeys: 'Nài ngựa',
-      hall: 'Hall of Fame',
-      wiki: 'Wiki'
-    },
-    header: {
-      tickets: 'Vé của tôi',
-      login: 'Đăng nhập',
-      signup: 'Đăng ký'
-    },
+    nav: { home: '\u0054rang ch\u1ee7', races: 'T\u1ea5t c\u1ea3 ch\u1eb7ng \u0111ua', horses: 'Ng\u1ef1a', jockeys: 'N\u00e0i ng\u1ef1a', hall: 'Hall of Fame', wiki: 'Wiki' },
+    header: { tickets: 'V\u00e9 c\u1ee7a t\u00f4i', login: '\u0110\u0103ng nh\u1eadp', signup: '\u0110\u0103ng k\u00fd' },
     hero: {
-      badge: 'Trải nghiệm đua ngựa cao cấp',
-      title: 'TRẢI NGHIỆM SỨC HÚT CỦA NHỮNG GIẢI ĐUA VÔ ĐỊCH',
-      subtitle: 'Đặt vé cho những sự kiện đua ngựa danh giá nhất. Chứng kiến các chú ngựa đua đẳng cấp tranh tài.',
-      ctaPrimary: 'Khám phá chặng đua',
-      ctaSecondary: 'Xem hạng vé'
-    },
-    news: {
-      title: 'Tin tức & Góc nhìn',
-      subtitle: 'Cập nhật chính thức từ các trường đua danh tiếng.'
+      title: 'TR\u1ea2I NGHI\u1ec6M S\u1ee8C H\u00daT C\u1ee6A NH\u1eeeNG GI\u1ea2I \u0110UA V\u00d4 \u0110\u1ecaCH',
+      subtitle: '\u0110\u1eb7t v\u00e9 \u0111ua ng\u1ef1a cao c\u1ea5p, qu\u1ea3n l\u00fd gi\u1ecf h\u00e0ng v\u00e0 thanh to\u00e1n v\u1edbi s\u01a1 \u0111\u1ed3 gh\u1ebf \u0111\u1eb7t tr\u01b0\u1edbc.'
     },
     home: {
-      featuredTitle: 'Chặng đua nổi bật',
-      featuredSubtitle: 'Đừng bỏ lỡ sự kiện lớn nhất của mùa giải.',
-      viewAll: 'Xem tất cả chặng đua',
-      whyTitle: 'Vì sao chọn Royal Racing',
-      whySubtitle: 'Trải nghiệm đua ngựa đẳng cấp với tiện ích cao cấp và dịch vụ vượt trội.',
-      benefit1Title: 'Trải nghiệm cao cấp',
-      benefit1Body: 'Phòng VIP, ẩm thực thượng hạng và quyền vào paddock.',
-      benefit2Title: 'Đặt vé an toàn',
-      benefit2Body: 'Giữ chỗ tạm thời trong khi hoàn tất thanh toán an toàn.',
-      benefit3Title: 'Góc nhìn chuyên gia',
-      benefit3Body: 'Thống kê ngựa đua, nài ngựa và phân tích chặng đua.'
+      benefit1Title: 'Tr\u1ea3i nghi\u1ec7m cao c\u1ea5p',
+      benefit2Title: '\u0110\u1eb7t v\u00e9 an to\u00e0n',
+      benefit3Title: 'Ph\u00e2n t\u00edch chuy\u00ean s\u00e2u'
     },
     races: {
-      eyebrow: 'Vé đang mở bán',
-      title: 'Các chặng đua đang bán vé',
-      subtitle: 'Lịch đua chính thức mùa 2026 tại Mỹ, Nhật, Anh.',
-      featuredTitle: 'Chặng đua nổi bật',
-      featuredSubtitle: 'Sự kiện sắp tới với đồng hồ đếm ngược theo thời gian thực.'
-    },
-    tiers: {
-      title: 'Hạng vé',
-      subtitle: 'Chọn vị trí phù hợp. Số lượng chỗ sẽ tự động cập nhật sau khi mua.'
+      eyebrow: 'V\u00e9 \u0111ang m\u1edf b\u00e1n',
+      title: 'C\u00e1c ch\u1eb7ng \u0111ua \u0111ang b\u00e1n v\u00e9',
+      subtitle: 'L\u1ecbch \u0111ua ch\u00ednh th\u1ee9c m\u00f9a 2026 t\u1ea1i M\u1ef9, Nh\u1eadt v\u00e0 Anh v\u1edbi s\u1ed1 gh\u1ebf c\u1eadp nh\u1eadt theo th\u1eddi gian th\u1ef1c.',
+      featuredTitle: 'Ch\u1eb7ng \u0111ua n\u1ed5i b\u1eadt',
+      featuredSubtitle: 'S\u1ef1 ki\u1ec7n s\u1eafp t\u1edbi v\u1edbi \u0111\u1ebfm ng\u01b0\u1ee3c tr\u1ef1c ti\u1ebfp v\u00e0 \u0111\u1eb7t v\u00e9 ngay.'
     },
     horses: {
-      eyebrow: 'Ngựa đua đang thi đấu',
-      title: 'Những nhà vô địch tại các giải đua danh giá',
-      subtitle: 'Hồ sơ, phả hệ và thành tích nổi bật của từng ngựa (cập nhật mùa 2026).'
+      eyebrow: 'Ng\u1ef1a \u0111ua \u0111ang thi \u0111\u1ea5u',
+      title: 'Nh\u1eefng nh\u00e0 v\u00f4 \u0111\u1ecbch t\u1ea1i c\u00e1c gi\u1ea3i \u0111ua danh gi\u00e1',
+      subtitle: 'H\u1ed3 s\u01a1, ph\u1ea3 h\u1ec7 v\u00e0 th\u00e0nh t\u00edch n\u1ed5i b\u1eadt c\u1ee7a t\u1eebng ng\u1ef1a.'
     },
     jockeys: {
-      eyebrow: 'Nài ngựa chuyên nghiệp',
-      title: 'Những tay đua đẳng cấp thế giới',
-      subtitle: 'Thống kê sự nghiệp chi tiết từ nguồn chính thức.'
+      eyebrow: 'N\u00e0i ng\u1ef1a chuy\u00ean nghi\u1ec7p',
+      title: 'Nh\u1eefng tay \u0111ua \u0111\u1eb3ng c\u1ea5p th\u1ebf gi\u1edbi',
+      subtitle: 'Th\u1ed1ng k\u00ea s\u1ef1 nghi\u1ec7p chi ti\u1ebft v\u00e0 c\u00e1c gi\u1ea3i th\u01b0\u1edfng ti\u00eau bi\u1ec3u.'
     },
     hall: {
       eyebrow: 'Hall of Fame',
-      title: 'Những huyền thoại tạo nên lịch sử đua ngựa',
-      subtitle: 'Bao gồm thông tin nghỉ hưu hoặc ngày tưởng niệm.'
+      title: 'Nh\u1eefng huy\u1ec1n tho\u1ea1i t\u1ea1o n\u00ean l\u1ecbch s\u1eed \u0111ua ng\u1ef1a',
+      subtitle: 'Bao g\u1ed3m th\u00f4ng tin ngh\u1ec9 h\u01b0u ho\u1eb7c ng\u00e0y t\u01b0\u1edfng ni\u1ec7m khi c\u00f3.'
     },
     wiki: {
       eyebrow: 'Wiki Royal Racing',
-      title: 'Kho dữ liệu ngựa, nài ngựa và huyền thoại',
-      subtitle: 'Truy cập các mục dữ liệu thực tế đã xác minh.',
-      horsesTitle: 'Ngựa',
-      horsesBody: 'Thông tin ngựa đang thi đấu và các nhà vô địch gần đây.',
-      jockeysTitle: 'Nài ngựa',
-      jockeysBody: 'Hồ sơ nài ngựa với thành tích nổi bật.',
+      title: 'Kho d\u1eef li\u1ec7u ng\u1ef1a, n\u00e0i ng\u1ef1a v\u00e0 huy\u1ec1n tho\u1ea1i',
+      subtitle: 'Truy c\u1eadp c\u00e1c m\u1ee5c d\u1eef li\u1ec7u th\u1ef1c t\u1ebf \u0111\u00e3 x\u00e1c minh.',
+      horsesTitle: 'Ng\u1ef1a',
+      horsesBody: 'Th\u00f4ng tin ng\u1ef1a \u0111ang thi \u0111\u1ea5u v\u00e0 c\u00e1c nh\u00e0 v\u00f4 \u0111\u1ecbch g\u1ea7n \u0111\u00e2y.',
+      jockeysTitle: 'N\u00e0i ng\u1ef1a',
+      jockeysBody: 'H\u1ed3 s\u01a1 n\u00e0i ng\u1ef1a v\u1edbi th\u00e0nh t\u00edch n\u1ed5i b\u1eadt.',
       hallTitle: 'Hall of Fame',
-      hallBody: 'Những huyền thoại với chiến thắng lịch sử.'
+      hallBody: 'Nh\u1eefng huy\u1ec1n tho\u1ea1i v\u1edbi chi\u1ebfn th\u1eafng l\u1ecbch s\u1eed.'
     },
-    footer: {
-      copy: '© 2026 Royal Racing. Dành cho người hâm mộ đua ngựa toàn cầu.'
-    },
+    footer: { copy: '\u00a9 2026 Royal Racing. D\u00e0nh cho ng\u01b0\u1eddi h\u00e2m m\u1ed9 \u0111ua ng\u1ef1a to\u00e0n c\u1ea7u.' },
     tickets: {
-      title: 'Vé của tôi',
-      empty: 'Chưa có vé nào được mua.',
-      remove: 'Xóa vé',
-      code: 'Mã vé',
-      seat: 'Số chỗ ngồi'
+      title: 'V\u00e9 c\u1ee7a t\u00f4i',
+      cartTitle: 'Gi\u1ecf h\u00e0ng',
+      historyTitle: 'L\u1ecbch s\u1eed mua v\u00e9',
+      empty: 'Ch\u01b0a c\u00f3 v\u00e9 n\u00e0o trong gi\u1ecf.',
+      historyEmpty: 'Ch\u01b0a c\u00f3 l\u1ecbch s\u1eed mua v\u00e9.',
+      remove: 'X\u00f3a',
+      pay: 'Ch\u1ecdn gh\u1ebf v\u00e0 thanh to\u00e1n',
+      invoice: 'Xu\u1ea5t h\u00f3a \u0111\u01a1n PDF',
+      code: 'M\u00e3 v\u00e9',
+      seat: 'S\u1ed1 gh\u1ebf',
+      cluster: 'C\u1ee5m',
+      tier: 'H\u1ea1ng v\u00e9',
+      status: 'Tr\u1ea1ng th\u00e1i',
+      statusPending: 'Ch\u1edd thanh to\u00e1n',
+      statusPaid: '\u0110\u00e3 thanh to\u00e1n',
+      race: 'Ch\u1eb7ng \u0111ua'
     },
     auth: {
-      loginTitle: 'Đăng nhập',
-      signupTitle: 'Đăng ký',
-      userLabel: 'Tên người dùng hoặc email',
-      emailLabel: 'Email hoặc tên người dùng',
-      phoneLabel: 'Số điện thoại',
-      passwordLabel: 'Mật khẩu',
-      loginButton: 'Đăng nhập',
-      signupButton: 'Tạo tài khoản',
-      loginSuccess: 'Đăng nhập thành công.',
-      signupSuccess: 'Tạo tài khoản thành công.',
-      welcome: 'Chào',
-      logout: 'Đăng xuất'
+      loginTitle: '\u0110\u0103ng nh\u1eadp',
+      signupTitle: '\u0110\u0103ng k\u00fd',
+      profileTitle: 'H\u1ed3 s\u01a1',
+      userLabel: 'Email ho\u1eb7c t\u00ean hi\u1ec3n th\u1ecb',
+      displayName: 'T\u00ean hi\u1ec3n th\u1ecb',
+      emailLabel: 'Email',
+      dobLabel: 'Ng\u00e0y th\u00e1ng n\u0103m sinh',
+      passwordLabel: 'M\u1eadt kh\u1ea9u',
+      loginButton: '\u0110\u0103ng nh\u1eadp',
+      signupButton: 'T\u1ea1o t\u00e0i kho\u1ea3n',
+      saveProfile: 'L\u01b0u h\u1ed3 s\u01a1',
+      changeAvatar: '\u0110\u1ed5i \u1ea3nh \u0111\u1ea1i di\u1ec7n',
+      loginSuccess: '\u0110\u0103ng nh\u1eadp th\u00e0nh c\u00f4ng.',
+      signupSuccess: 'T\u1ea1o t\u00e0i kho\u1ea3n th\u00e0nh c\u00f4ng.',
+      profileSuccess: 'C\u1eadp nh\u1eadt h\u1ed3 s\u01a1 th\u00e0nh c\u00f4ng.',
+      avatarSuccess: 'C\u1eadp nh\u1eadt \u1ea3nh \u0111\u1ea1i di\u1ec7n th\u00e0nh c\u00f4ng.',
+      welcome: 'Xin ch\u00e0o',
+      logout: '\u0110\u0103ng xu\u1ea5t'
     },
     payment: {
-      title: 'Thanh toán vé chặng đua',
-      customerName: 'Tên khách hàng',
-      chooseSeat: 'Chọn ghế',
-      trackLabel: 'Phía đường đua',
-      seatHint: 'Premium ở hàng gần đường đua, Gold ở giữa, Standard ở hàng trên cùng.',
-      tierStandard: 'Standard',
-      tierGold: 'Gold',
-      tierPremium: 'Premium',
-      tierStandardDesc: 'Hàng ghế trên cao, góc nhìn toàn cảnh.',
-      tierGoldDesc: 'Hàng ghế giữa, tầm nhìn cân bằng.',
-      tierPremiumDesc: 'Hàng ghế đầu gần đường đua nhất.',
-      race: 'Chặng đua',
-      seat: 'Ghế',
-      total: 'Tổng tiền',
-      payNow: 'Hoàn tất thanh toán',
-      methodLabel: 'Phương thức thanh toán',
-      methodVisaMaster: 'Visa/Mastercard',
+      title: 'Thanh to\u00e1n',
+      detailsTitle: 'Th\u00f4ng tin kh\u00e1ch h\u00e0ng',
+      seatMapTitle: 'S\u01a1 \u0111\u1ed3 gh\u1ebf',
+      name: 'T\u00ean',
+      address: '\u0110\u1ecba ch\u1ec9',
+      email: 'Email',
+      methodLabel: 'Ph\u01b0\u01a1ng th\u1ee9c thanh to\u00e1n',
+      methodVisaMaster: 'Visa / Mastercard',
       methodPaypal: 'PayPal',
-      cardholderName: 'Họ tên chủ thẻ',
-      cardNumber: 'Mã số thẻ',
-      cvv: 'Mã CVV',
-      expiryDate: 'Ngày hết hạn',
-      address: 'Địa chỉ nhà'
+      cardholderName: 'T\u00ean ch\u1ee7 th\u1ebb',
+      cardNumber: 'S\u1ed1 th\u1ebb',
+      cvv: 'CVV',
+      expiryDate: 'Ng\u00e0y h\u1ebft h\u1ea1n',
+      month: 'MM',
+      year: 'YY',
+      race: 'Ch\u1eb7ng \u0111ua',
+      seat: 'Gh\u1ebf',
+      cluster: 'C\u1ee5m',
+      tier: 'H\u1ea1ng v\u00e9',
+      total: 'T\u1ed5ng ti\u1ec1n',
+      payNow: 'X\u00e1c nh\u1eadn thanh to\u00e1n',
+      seatHint: 'D\u00e3y A-C: Premium, D-F: Gold, G-I: Standard.'
     },
     labels: {
-      countdown: 'Đếm ngược',
-      seatsLeft: 'Chỗ còn lại',
-      horsesCount: 'ngựa',
-      buyTicket: 'Mua vé',
-      bookTier: 'Đặt',
-      paymentMethod: 'Phương thức thanh toán',
-      bankCard: 'Ngân hàng/PayPal',
-      nextRaceStarts: 'Chặng đua tiếp theo bắt đầu sau',
-      schedule: 'Lịch thi đấu',
-      startsOn: 'Ngày khởi tranh',
-      days: 'Ngày',
-      hours: 'Giờ',
-      mins: 'Phút',
-      secs: 'Giây',
-      liveNow: 'Đang diễn ra',
-      location: 'Địa điểm',
-      record: 'Thành tích',
-      started: 'Năm bắt đầu',
-      titles: 'Danh hiệu lớn',
-      status: 'Trạng thái',
-      wins: 'Số trận thắng',
-      awards: 'Giải thưởng',
-      retired: 'Nghỉ hưu',
-      memorial: 'Tưởng niệm'
-    },
-    tables: {
-      horses: ['Tên', 'Quốc gia', 'Màu lông', 'Ngày sinh', 'Năm bắt đầu', 'Thành tích', 'Danh hiệu lớn'],
-      jockeys: ['Tên', 'Ngày sinh', 'Giới tính', 'Trạng thái', 'Năm bắt đầu', 'Số trận thắng', 'Giải thưởng'],
-      hall: ['Tên', 'Quốc gia', 'Màu lông', 'Ngày sinh', 'Năm bắt đầu', 'Thành tích', 'Danh hiệu lớn', 'Nghỉ hưu', 'Tưởng niệm']
+      countdown: '\u0110\u1ebfm ng\u01b0\u1ee3c',
+      seatsLeft: 'Ch\u1ed7 c\u00f2n l\u1ea1i',
+      horsesCount: 'ng\u1ef1a',
+      addToCart: 'Th\u00eam v\u00e0o gi\u1ecf h\u00e0ng',
+      buyNow: 'Mua ngay',
+      location: '\u0110\u1ecba \u0111i\u1ec3m',
+      schedule: 'L\u1ecbch thi \u0111\u1ea5u',
+      startsOn: 'Ng\u00e0y kh\u1edfi tranh',
+      days: 'Ng\u00e0y',
+      hours: 'Gi\u1edd',
+      mins: 'Ph\u00fat',
+      secs: 'Gi\u00e2y',
+      liveNow: '\u0110ang di\u1ec5n ra',
+      record: 'Th\u00e0nh t\u00edch',
+      titles: 'Danh hi\u1ec7u l\u1edbn',
+      started: 'N\u0103m b\u1eaft \u0111\u1ea7u',
+      wins: 'S\u1ed1 tr\u1eadn th\u1eafng',
+      awards: 'Gi\u1ea3i th\u01b0\u1edfng',
+      memorial: 'T\u01b0\u1edfng ni\u1ec7m'
     },
     toast: {
-      purchaseOk: 'Mua vé thành công.',
-      purchaseError: 'Yêu cầu mua vé không hợp lệ.'
+      cartAdded: '\u0110\u00e3 th\u00eam v\u00e9 v\u00e0o gi\u1ecf h\u00e0ng.',
+      purchaseOk: 'Thanh to\u00e1n th\u00e0nh c\u00f4ng.',
+      purchaseError: 'Kh\u00f4ng th\u1ec3 ho\u00e0n t\u1ea5t thanh to\u00e1n.',
+      chooseSeat: 'Vui l\u00f2ng ch\u1ecdn gh\u1ebf tr\u01b0\u1edbc khi thanh to\u00e1n.',
+      loginRequired: 'Vui l\u00f2ng \u0111\u0103ng nh\u1eadp \u0111\u1ec3 ti\u1ebfp t\u1ee5c.',
+      invoiceReady: '\u0110\u00e3 t\u1ea1o h\u00f3a \u0111\u01a1n PDF.',
+      loadError: 'M\u1ed9t s\u1ed1 m\u1ee5c kh\u00f4ng th\u1ec3 t\u1ea3i.'
+    },
+    invoice: {
+      title: 'H\u00f3a \u0111\u01a1n v\u00e9',
+      thanks: 'C\u1ea3m \u01a1n kh\u00e1ch h\u00e0ng \u0111\u00e3 s\u1eed d\u1ee5ng d\u1ecbch v\u1ee5.',
+      customer: 'Kh\u00e1ch h\u00e0ng',
+      ticketId: 'M\u00e3 v\u00e9',
+      amount: 'S\u1ed1 ti\u1ec1n',
+      ticketType: 'Lo\u1ea1i v\u00e9',
+      seatNumber: 'S\u1ed1 gh\u1ebf',
+      cluster: 'C\u1ee5m',
+      timestamp: 'Th\u1eddi gian'
     }
   }
 };
 
-const getLanguage = () => localStorage.getItem('rr-lang') || 'en';
-
-const setLanguage = (lang) => {
-  localStorage.setItem('rr-lang', lang);
-  document.documentElement.lang = lang;
-  const dictionary = translations[lang] || translations.en;
-
-  document.querySelectorAll('[data-i18n]').forEach((node) => {
-    const key = node.getAttribute('data-i18n');
-    const parts = key.split('.');
-    let value = dictionary;
-    parts.forEach((part) => {
-      value = value && value[part];
-    });
-    if (typeof value === 'string') {
-      node.textContent = value;
-    }
-  });
-
-  const languageSelects = document.querySelectorAll('.js-language');
-  languageSelects.forEach((select) => {
-    select.value = lang;
-  });
-
-  updateTicketsCount();
-
-  return dictionary;
-};
-
-const t = (key) => {
-  const lang = getLanguage();
-  const dictionary = translations[lang] || translations.en;
-  return key.split('.').reduce((acc, part) => (acc ? acc[part] : undefined), dictionary);
-};
-
-const logoFallback =
-  'data:image/svg+xml;utf8,' +
+const DEFAULT_AVATAR =
+  "data:image/svg+xml;utf8," +
   encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80" viewBox="0 0 120 80">' +
-      '<rect width="120" height="80" rx="16" fill="#f3e7d6"/>' +
-      '<text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="28">🏆</text>' +
-    '</svg>'
+    "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><rect width='120' height='120' rx='60' fill='#e8dbc6'/><circle cx='60' cy='44' r='20' fill='#8a6240'/><path d='M28 102c4-20 20-30 32-30s28 10 32 30' fill='#8a6240'/></svg>"
   );
 
-const withFallback = (url) => (url ? url : logoFallback);
+const PAYMENT_TIERS = [
+  { id: 'premium', rows: ['A', 'B', 'C'], price: 220, color: '#4f311c' },
+  { id: 'gold', rows: ['D', 'E', 'F'], price: 150, color: '#b88428' },
+  { id: 'standard', rows: ['G', 'H', 'I'], price: 95, color: '#856042' }
+];
 
-const localeMap = {
-  en: 'en-US',
-  ja: 'ja-JP',
-  vi: 'vi-VN'
+const paymentState = {
+  mode: 'buy-now',
+  race: null,
+  ticketId: null,
+  tierId: 'premium',
+  seatId: '',
+  seatLabel: '',
+  clusterLabel: '',
+  paymentMethod: 'visa_master'
 };
+
+const appData = {
+  featuredRaces: null,
+  horses: null,
+  jockeys: null,
+  hallOfFame: null
+};
+
+const getLanguage = () => localStorage.getItem('rr-lang') || 'vi';
+const t = (key) => key.split('.').reduce((acc, part) => (acc ? acc[part] : undefined), translations[getLanguage()] || translations.vi);
+
+const normalizeStaticDom = () => {
+  const trophySvg = `<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M20 10h24v9c0 8.2-5.3 15.2-12 17.7C25.3 34.2 20 27.2 20 19z" fill="#c9973d"/><path d="M25 40h14v6H25z" fill="#4b2f1d"/><path d="M21 46h22v8H21z" fill="#4b2f1d"/><path d="M16 14H8c0 8 4.9 13 11.5 13" fill="none" stroke="#4b2f1d" stroke-width="4" stroke-linecap="round"/><path d="M48 14h8c0 8-4.9 13-11.5 13" fill="none" stroke="#4b2f1d" stroke-width="4" stroke-linecap="round"/></svg>`;
+  const globeSvg = `<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="24" fill="none" stroke="#4b2f1d" stroke-width="3"/><ellipse cx="32" cy="32" rx="12" ry="24" fill="none" stroke="#4b2f1d" stroke-width="3"/><path d="M8 32h48M12 20h40M12 44h40" fill="none" stroke="#4b2f1d" stroke-width="3" stroke-linecap="round"/></svg>`;
+
+  document.querySelectorAll('.logo-icon').forEach((node) => {
+    node.innerHTML = trophySvg;
+  });
+
+  document.querySelectorAll('.globe').forEach((node) => {
+    node.innerHTML = globeSvg;
+  });
+
+  document.querySelectorAll('.benefit-icon').forEach((node, index) => {
+    const labels = ['VIP', 'SEC', 'INS'];
+    node.textContent = labels[index] || 'RR';
+  });
+
+  document.querySelectorAll('[data-close]').forEach((node) => {
+    node.textContent = '\u00d7';
+  });
+
+  document.querySelectorAll('.js-language').forEach((select) => {
+    Array.from(select.options).forEach((option) => {
+      if (option.value === 'en') option.textContent = 'EN';
+      if (option.value === 'vi') option.textContent = 'Ti\u1ebfng Vi\u1ec7t';
+    });
+  });
+};
+
+const getCurrentUser = () => {
+  try {
+    return JSON.parse(localStorage.getItem('rr-user') || 'null');
+  } catch (error) {
+    return null;
+  }
+};
+
+const getTicketStorageKey = () => {
+  const user = getCurrentUser();
+  return user ? `rr-ticket-store:${user.id}` : 'rr-ticket-store:guest';
+};
+
+const getTicketStore = () => {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(getTicketStorageKey()) || '{}');
+    return {
+      cart: Array.isArray(parsed.cart) ? parsed.cart : [],
+      history: Array.isArray(parsed.history) ? parsed.history : []
+    };
+  } catch (error) {
+    return { cart: [], history: [] };
+  }
+};
+
+const saveTicketStore = (store) => localStorage.setItem(getTicketStorageKey(), JSON.stringify(store));
+const generateTicketId = () => `RR-${new Date().toISOString().replace(/\D/g, '').slice(0, 14)}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
+
+const localeMap = { en: 'en-US', vi: 'vi-VN' };
 
 const formatRaceDate = (dateString) => {
   const date = new Date(dateString);
-  if (Number.isNaN(date.getTime())) {
-    return dateString;
-  }
-  const locale = localeMap[getLanguage()] || 'en-US';
-  return new Intl.DateTimeFormat(locale, {
+  if (Number.isNaN(date.getTime())) return dateString;
+  return new Intl.DateTimeFormat(localeMap[getLanguage()] || 'vi-VN', {
+    day: '2-digit',
     month: 'short',
-    day: 'numeric',
     year: 'numeric',
-    hour: 'numeric',
+    hour: '2-digit',
     minute: '2-digit'
   }).format(date);
 };
 
-const applyImageFallbacks = () => {
-  document.querySelectorAll('img[data-fallback="logo"]').forEach((img) => {
-    img.onerror = () => {
-      img.src = logoFallback;
-    };
+const formatInvoiceTimestamp = (value = new Date()) => {
+  const date = value instanceof Date ? value : new Date(value);
+  const pad = (num) => String(num).padStart(2, '0');
+  return `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())} ${pad(date.getDate())}/${pad(date.getMonth() + 1)}/${date.getFullYear()}`;
+};
+
+const withFallback = (url) => url || DEFAULT_AVATAR;
+const getSeatClusterLabel = (seatValue) => {
+  const match = String(seatValue || '').match(/^([A-I])[- ]?(\d{1,2})$/i);
+  if (!match) return '';
+  const row = match[1].toUpperCase();
+  const seatNumber = Number(match[2]);
+  if (!seatNumber) return '';
+  return `${row}${Math.ceil(seatNumber / 5)}`;
+};
+
+const syncSeatScrollbar = () => {
+  const seatGrid = document.getElementById('seat-grid');
+  const scrollbar = document.getElementById('seat-scrollbar');
+  const track = document.getElementById('seat-scrollbar-track');
+  if (!seatGrid || !scrollbar || !track) return;
+
+  const contentWidth = seatGrid.scrollWidth;
+  const viewportWidth = seatGrid.clientWidth;
+  const hasOverflow = contentWidth > viewportWidth + 8;
+
+  scrollbar.hidden = !hasOverflow;
+  track.style.width = `${contentWidth}px`;
+
+  if (scrollbar.dataset.bound === 'true') return;
+  scrollbar.dataset.bound = 'true';
+
+  let syncingFromGrid = false;
+  let syncingFromBar = false;
+
+  seatGrid.addEventListener('scroll', () => {
+    if (syncingFromBar) return;
+    syncingFromGrid = true;
+    scrollbar.scrollLeft = seatGrid.scrollLeft;
+    syncingFromGrid = false;
+  });
+
+  scrollbar.addEventListener('scroll', () => {
+    if (syncingFromGrid) return;
+    syncingFromBar = true;
+    seatGrid.scrollLeft = scrollbar.scrollLeft;
+    syncingFromBar = false;
   });
 };
 
-
-const wikiImageCache = new Map();
-
-const resolveWikiImage = async (title) => {
-  if (!title) return null;
-  const candidates = title
-    .split('|')
-    .map((item) => item.trim())
-    .filter(Boolean);
-
-  for (const key of candidates) {
-    if (wikiImageCache.has(key)) {
-      const cached = wikiImageCache.get(key);
-      if (cached) return cached;
-      continue;
-    }
-
-    const endpoint = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(key)}`;
-    try {
-      const response = await fetch(endpoint);
-      if (!response.ok) {
-        wikiImageCache.set(key, null);
-        continue;
-      }
-      const data = await response.json();
-      const url = data?.thumbnail?.source || data?.originalimage?.source || null;
-      wikiImageCache.set(key, url);
-      if (url) return url;
-    } catch (error) {
-      wikiImageCache.set(key, null);
-    }
+const formatHorseRecord = (record) => {
+  const match = String(record || '').match(/(\d[\d,]*)\s*starts?.*?(\d[\d,]*)\s*wins?/i);
+  if (!match) return record;
+  const [, starts, wins] = match;
+  if (getLanguage() === 'vi') {
+    return `${starts} l\u1ea7n ra s\u00e2n | ${wins} chi\u1ebfn th\u1eafng`;
   }
-
-  return null;
+  return `${starts} starts | ${wins} wins`;
 };
 
-const loadWikipediaImages = async () => {
-  const images = Array.from(document.querySelectorAll('img[data-image-title]'));
-  await Promise.all(
-    images.map(async (img) => {
-      const title = img.getAttribute('data-image-title');
-      const url = await resolveWikiImage(title);
-      if (url) {
-        img.src = url;
-      }
-    })
-  );
-};
-
-const getTickets = () => JSON.parse(localStorage.getItem('rr-tickets') || '[]');
-
-const saveTickets = (tickets) => {
-  localStorage.setItem('rr-tickets', JSON.stringify(tickets));
-};
-
-const updateTicketsCount = () => {
-  const button = document.querySelector('[data-action="tickets"]');
-  if (!button) return;
-  const count = getTickets().length;
-  const label = t('header.tickets');
-  button.textContent = `${label} (${count})`;
-};
-
-const updateHeaderAuth = () => {
-  const user = JSON.parse(localStorage.getItem('rr-user'));
-  const headerTools = document.querySelector('.header-tools');
-  if (!headerTools) return;
-
-  const loginBtn = headerTools.querySelector('[data-action="login"]');
-  const signupBtn = headerTools.querySelector('[data-action="signup"]');
-  
-  let userDisplay = headerTools.querySelector('.user-display');
-  
-  if (user) {
-    if (loginBtn) loginBtn.style.display = 'none';
-    if (signupBtn) signupBtn.style.display = 'none';
-    
-    if (!userDisplay) {
-      userDisplay = document.createElement('div');
-      userDisplay.className = 'user-display';
-      headerTools.appendChild(userDisplay);
-    }
-    
-    userDisplay.innerHTML = `
-      <span class="welcome-text">${t('auth.welcome')}, ${user.name}</span>
-      <button class="ghost-button logout-btn">${t('auth.logout')}</button>
-    `;
-    
-    userDisplay.querySelector('.logout-btn').addEventListener('click', () => {
-      localStorage.removeItem('rr-user');
-      updateHeaderAuth();
-    });
-  } else {
-    if (loginBtn) loginBtn.style.display = '';
-    if (signupBtn) signupBtn.style.display = '';
-    if (userDisplay) userDisplay.remove();
+const formatJockeyWins = (wins) => {
+  const match = String(wins || '').match(/over\s+([\d,]+)\s+wins?/i);
+  if (!match) return wins;
+  const [, totalWins] = match;
+  if (getLanguage() === 'vi') {
+    return `H\u01a1n ${totalWins} chi\u1ebfn th\u1eafng`;
   }
+  return `Over ${totalWins} wins`;
 };
 
-const removeTicket = (ticketId) => {
-  const tickets = getTickets();
-  const updated = tickets.filter((ticket) => ticket.id !== ticketId);
-  saveTickets(updated);
-  updateTicketsCount();
-  renderTicketsList();
-};
+const seatTierByRow = (row) => (['A', 'B', 'C'].includes(row) ? 'premium' : ['D', 'E', 'F'].includes(row) ? 'gold' : 'standard');
+const getTierConfig = (tierId = paymentState.tierId) => PAYMENT_TIERS.find((item) => item.id === tierId) || PAYMENT_TIERS[0];
+const getLocalizedTierLabel = (tierId) => (tierId === 'premium' ? 'Premium' : tierId === 'gold' ? 'Gold' : 'Standard');
 
-const renderTicketsList = () => {
-  const list = document.getElementById('tickets-list');
-  if (!list) return;
-  const tickets = getTickets();
-  if (tickets.length === 0) {
-    list.classList.remove('tickets-list');
-    list.innerHTML = `<p>${t('tickets.empty')}</p>`;
-    return;
-  }
-
-  list.classList.add('tickets-list');
-  list.innerHTML = tickets
-    .map(
-      (ticket) => `
-      <div class="ticket-item">
-        <strong>${ticket.title}</strong>
-        <p>${ticket.detail}</p>
-        <p><strong>${t('tickets.code')}:</strong> ${ticket.ticketCode || '—'}</p>
-        <p><strong>${t('tickets.seat')}:</strong> ${ticket.seatNumber || '—'}</p>
-        <p>$${ticket.price}</p>
-        <button class="danger-button" data-ticket-remove="${ticket.id}">${t('tickets.remove')}</button>
-      </div>
-    `
-    )
-    .join('');
-
-  list.querySelectorAll('[data-ticket-remove]').forEach((button) => {
-    button.addEventListener('click', () => removeTicket(button.getAttribute('data-ticket-remove')));
-  });
-};
-
+const getModal = (id) => document.getElementById(id);
 const openModal = (id) => {
-  const modal = document.getElementById(id);
+  const modal = getModal(id);
   if (!modal) return;
   modal.classList.add('show');
   modal.setAttribute('aria-hidden', 'false');
 };
 
 const closeModal = (id) => {
-  const modal = document.getElementById(id);
+  const modal = getModal(id);
   if (!modal) return;
   modal.classList.remove('show');
   modal.setAttribute('aria-hidden', 'true');
@@ -711,120 +496,416 @@ const closeModal = (id) => {
 
 const showToast = (message) => {
   const toast = document.getElementById('toast');
-  if (!toast) {
-    return;
-  }
+  if (!toast) return;
   toast.textContent = message;
   toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2600);
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => toast.classList.remove('show'), 2600);
 };
 
-const addTicket = (ticket) => {
-  const tickets = getTickets();
-  tickets.push({
-    ...ticket,
-    id: ticket.id || `${Date.now()}-${Math.random().toString(16).slice(2)}`
+const createSkeletonCards = (count, variant = 'card') =>
+  Array.from({ length: count }, () => `
+    <article class="${variant === 'profile' ? 'profile-card' : 'card'} skeleton-card" aria-hidden="true">
+      <div class="skeleton-media"></div>
+      <div class="skeleton-line skeleton-line-title"></div>
+      <div class="skeleton-line"></div>
+      <div class="skeleton-line skeleton-line-short"></div>
+    </article>
+  `).join('');
+
+const renderLoadingState = () => {
+  const featured = document.getElementById('featured-races');
+  if (featured) featured.innerHTML = createSkeletonCards(6, 'card');
+
+  const horsesGrid = document.getElementById('horses-grid');
+  if (horsesGrid) horsesGrid.innerHTML = createSkeletonCards(6, 'profile');
+
+  const jockeysGrid = document.getElementById('jockeys-grid');
+  if (jockeysGrid) jockeysGrid.innerHTML = createSkeletonCards(6, 'profile');
+
+  const hallGrid = document.getElementById('hall-grid');
+  if (hallGrid) hallGrid.innerHTML = createSkeletonCards(6, 'profile');
+};
+
+const dataUrlFromCanvas = (canvas, mimeType, quality) =>
+  new Promise((resolve) => resolve(canvas.toDataURL(mimeType, quality)));
+
+const prepareAvatarPayload = async (file) => {
+  if (file.type === 'image/gif') {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  if (!file.type.startsWith('image/')) {
+    throw new Error('Unsupported avatar format.');
+  }
+
+  const originalDataUrl = await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
   });
-  saveTickets(tickets);
+
+  const image = await new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = originalDataUrl;
+  });
+
+  const maxEdge = 720;
+  const scale = Math.min(1, maxEdge / Math.max(image.width, image.height));
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(1, Math.round(image.width * scale));
+  canvas.height = Math.max(1, Math.round(image.height * scale));
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+  const mimeType = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+  return dataUrlFromCanvas(canvas, mimeType, 0.86);
+};
+
+const ensureSharedModals = () => {
+  const modalDefinitions = [
+    {
+      id: 'tickets-modal',
+      html: `
+        <div class="modal-card tickets-modal-card">
+          <div class="modal-header">
+            <h3 data-i18n="tickets.title">My Tickets</h3>
+            <button class="icon-button" type="button" data-close="tickets-modal">&times;</button>
+          </div>
+          <div class="modal-body tickets-modal-body" id="tickets-list"></div>
+        </div>
+      `
+    },
+    {
+      id: 'login-modal',
+      html: `
+        <div class="modal-card auth-modal-card">
+          <div class="modal-header">
+            <h3 data-i18n="auth.loginTitle">Login</h3>
+            <button class="icon-button" type="button" data-close="login-modal">&times;</button>
+          </div>
+          <form class="modal-body form-grid" id="login-form">
+            <label>
+              <span data-i18n="auth.userLabel">Email or display name</span>
+              <input type="text" name="identifier" required />
+            </label>
+            <label>
+              <span data-i18n="auth.passwordLabel">Password</span>
+              <input type="password" name="password" required />
+            </label>
+            <button class="primary-button" type="submit" data-i18n="auth.loginButton">Login</button>
+          </form>
+        </div>
+      `
+    },
+    {
+      id: 'signup-modal',
+      html: `
+        <div class="modal-card auth-modal-card">
+          <div class="modal-header">
+            <h3 data-i18n="auth.signupTitle">Sign up</h3>
+            <button class="icon-button" type="button" data-close="signup-modal">&times;</button>
+          </div>
+          <form class="modal-body form-grid" id="signup-form">
+            <label>
+              <span data-i18n="auth.displayName">Display Name</span>
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              <span data-i18n="auth.emailLabel">Email</span>
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              <span data-i18n="auth.dobLabel">Date of Birth</span>
+              <input type="date" name="dob" required />
+            </label>
+            <label>
+              <span data-i18n="auth.passwordLabel">Password</span>
+              <input type="password" name="password" required />
+            </label>
+            <button class="primary-button" type="submit" data-i18n="auth.signupButton">Create account</button>
+          </form>
+        </div>
+      `
+    },
+    {
+      id: 'profile-modal',
+      html: `
+        <div class="modal-card auth-modal-card">
+          <div class="modal-header">
+            <h3 data-i18n="auth.profileTitle">Profile</h3>
+            <button class="icon-button" type="button" data-close="profile-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="profile-settings">
+              <div class="profile-avatar-block">
+                <img id="profile-avatar-preview" class="profile-avatar-large" src="${DEFAULT_AVATAR}" alt="avatar" />
+                <input type="file" id="avatar-upload" accept="image/png,image/jpeg,image/webp,image/gif" hidden />
+                <button class="ghost-button" type="button" id="avatar-trigger" data-i18n="auth.changeAvatar">Change avatar</button>
+              </div>
+              <form id="profile-form" class="form-grid">
+                <label>
+                  <span data-i18n="auth.displayName">Display Name</span>
+                  <input type="text" id="profile-name" name="name" required />
+                </label>
+                <label>
+                  <span data-i18n="auth.dobLabel">Date of Birth</span>
+                  <input type="date" id="profile-dob" name="dob" required />
+                </label>
+                <button class="primary-button" type="submit" data-i18n="auth.saveProfile">Save profile</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: 'payment-modal',
+      html: `
+        <div class="modal-card payment-modal-card">
+          <div class="modal-header">
+            <h3 data-i18n="payment.title">Payment</h3>
+            <button class="icon-button" type="button" data-close="payment-modal">&times;</button>
+          </div>
+          <form class="modal-body payment-modal-body" id="payment-form">
+            <section class="payment-left-column">
+              <div class="payment-panel">
+                <h4 class="payment-section-title" data-i18n="payment.detailsTitle">Customer Details</h4>
+                <label>
+                  <span data-i18n="payment.name">Name</span>
+                  <input type="text" id="payment-customer" required />
+                </label>
+                <label>
+                  <span data-i18n="payment.address">Address</span>
+                  <input type="text" id="payment-address" required />
+                </label>
+                <label>
+                  <span data-i18n="payment.email">Email</span>
+                  <input type="email" id="payment-email" required />
+                </label>
+              </div>
+
+              <div class="payment-panel">
+                <h4 class="payment-section-title" data-i18n="payment.methodLabel">Payment Method</h4>
+                <div class="method-options">
+                  <label class="method-option">
+                    <input type="radio" name="paymentMethod" value="visa_master" checked />
+                    <span class="method-option-content">
+                      <span class="method-icon method-card-icon">VISA</span>
+                      <span data-i18n="payment.methodVisaMaster">Visa / Mastercard</span>
+                    </span>
+                  </label>
+                  <label class="method-option">
+                    <input type="radio" name="paymentMethod" value="paypal" />
+                    <span class="method-option-content">
+                      <span class="method-icon method-paypal-icon">P</span>
+                      <span data-i18n="payment.methodPaypal">PayPal</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="payment-panel" id="card-fields">
+                <label>
+                  <span data-i18n="payment.cardholderName">Cardholder Name</span>
+                  <input type="text" id="payment-cardholder" />
+                </label>
+                <label>
+                  <span data-i18n="payment.cardNumber">Card Number</span>
+                  <input type="text" id="payment-cardnumber" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" />
+                </label>
+                <div class="card-inline-grid">
+                  <label>
+                    <span data-i18n="payment.cvv">CVV</span>
+                    <input type="text" id="payment-cvv" inputmode="numeric" maxlength="3" placeholder="123" />
+                  </label>
+                  <label>
+                    <span data-i18n="payment.expiryDate">Expiry Date</span>
+                    <div class="expiry-group">
+                      <input type="text" id="payment-expiry-month" inputmode="numeric" maxlength="2" data-i18n-placeholder="payment.month" placeholder="MM" />
+                      <span class="expiry-dash">-</span>
+                      <input type="text" id="payment-expiry-year" inputmode="numeric" maxlength="2" data-i18n-placeholder="payment.year" placeholder="YY" />
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="payment-panel">
+                <div class="payment-tier-choice" id="payment-tier-choice"></div>
+              </div>
+
+              <div class="payment-summary" id="payment-summary"></div>
+              <button class="primary-button payment-submit" type="submit" data-i18n="payment.payNow">Confirm Payment</button>
+            </section>
+
+            <section class="payment-right-column">
+              <div class="payment-seat-header">
+                <h4 class="payment-section-title" data-i18n="payment.seatMapTitle">Seat Map</h4>
+                <p class="seat-hint" data-i18n="payment.seatHint">Rows A-C: Premium, D-F: Gold, G-I: Standard.</p>
+              </div>
+              <div class="track-rail"><span>ROYAL TRACK</span></div>
+              <div class="seat-legend">
+                <span><i class="legend-box available"></i>Available</span>
+                <span><i class="legend-box selected"></i>Selected</span>
+                <span><i class="legend-box booked"></i>Booked</span>
+              </div>
+              <div class="seat-scrollbar" id="seat-scrollbar" aria-hidden="true">
+                <div class="seat-scrollbar-track" id="seat-scrollbar-track"></div>
+              </div>
+              <div class="seat-map-wrapper" id="seat-grid"></div>
+            </section>
+          </form>
+        </div>
+      `
+    }
+  ];
+
+  modalDefinitions.forEach(({ id, html }) => {
+    let modal = document.getElementById(id);
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = id;
+      document.body.appendChild(modal);
+    }
+    modal.className = 'modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = html;
+  });
+};
+
+const setLanguage = (lang) => {
+  const dictionary = translations[lang] || translations.vi;
+  localStorage.setItem('rr-lang', lang);
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach((node) => {
+    const value = node.getAttribute('data-i18n').split('.').reduce((acc, part) => (acc ? acc[part] : undefined), dictionary);
+    if (typeof value === 'string') node.textContent = value;
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((node) => {
+    const value = node.getAttribute('data-i18n-placeholder').split('.').reduce((acc, part) => (acc ? acc[part] : undefined), dictionary);
+    if (typeof value === 'string') node.setAttribute('placeholder', value);
+  });
+
+  document.querySelectorAll('.js-language').forEach((select) => {
+    select.value = lang;
+  });
+
+  updateTicketsCount();
+  renderTicketsList();
+  renderTierChoices();
+  renderPaymentSummary();
+};
+
+const updateTicketsCount = () => {
+  const button = document.querySelector('[data-action="tickets"]');
+  if (!button) return;
+  button.textContent = `${t('header.tickets')} (${getTicketStore().cart.length})`;
+};
+
+const updateHeaderAuth = () => {
+  const user = getCurrentUser();
+  const headerTools = document.querySelector('.header-tools');
+  if (!headerTools) return;
+
+  const loginButton = headerTools.querySelector('[data-action="login"]');
+  const signupButton = headerTools.querySelector('[data-action="signup"]');
+  let userDisplay = headerTools.querySelector('.user-display');
+
+  if (!user) {
+    if (loginButton) loginButton.style.display = '';
+    if (signupButton) signupButton.style.display = '';
+    if (userDisplay) userDisplay.remove();
+    updateTicketsCount();
+    renderTicketsList();
+    return;
+  }
+
+  if (loginButton) loginButton.style.display = 'none';
+  if (signupButton) signupButton.style.display = 'none';
+
+  if (!userDisplay) {
+    userDisplay = document.createElement('div');
+    userDisplay.className = 'user-display';
+    headerTools.appendChild(userDisplay);
+  }
+
+  userDisplay.innerHTML = `
+    <button class="user-chip" type="button" id="profile-open">
+      <img src="${withFallback(user.avatar)}" alt="${user.name}" class="header-avatar" />
+      <span>${t('auth.welcome')}, ${user.name}</span>
+    </button>
+    <button class="ghost-button" type="button" id="logout-button">${t('auth.logout')}</button>
+  `;
+
+  userDisplay.querySelector('#profile-open')?.addEventListener('click', () => {
+    const preview = document.getElementById('profile-avatar-preview');
+    const nameField = document.getElementById('profile-name');
+    const dobField = document.getElementById('profile-dob');
+    if (preview) preview.src = withFallback(user.avatar);
+    if (nameField) nameField.value = user.name || '';
+    if (dobField) dobField.value = user.dob || '';
+    openModal('profile-modal');
+  });
+
+  userDisplay.querySelector('#logout-button')?.addEventListener('click', () => {
+    localStorage.removeItem('rr-user');
+    updateHeaderAuth();
+  });
+
   updateTicketsCount();
   renderTicketsList();
 };
 
-
-const paymentState = {
-  race: null,
-  tierId: 'premium',
-  seatId: null,
-  seatLabel: ''
-};
-
-const paymentTierConfig = () => [
-  {
-    id: 'premium',
-    label: t('payment.tierPremium'),
-    desc: t('payment.tierPremiumDesc'),
-    price: 220,
-    rows: ['A', 'B', 'C'],
-    color: '#5b3a22'
-  },
-  {
-    id: 'gold',
-    label: t('payment.tierGold'),
-    desc: t('payment.tierGoldDesc'),
-    price: 150,
-    rows: ['D', 'E', 'F'],
-    color: '#b07a2a'
-  },
-  {
-    id: 'standard',
-    label: t('payment.tierStandard'),
-    desc: t('payment.tierStandardDesc'),
-    price: 95,
-    rows: ['G', 'H', 'I'],
-    color: '#7b5133'
-  }
-];
-
-const getCurrentTier = () => paymentTierConfig().find((tier) => tier.id === paymentState.tierId) || paymentTierConfig()[0];
-
 const buildSeatMap = () => {
-  const seats = [];
-  const tierConfigs = paymentTierConfig();
-  
-  tierConfigs.forEach((tier) => {
-    tier.rows.forEach((row) => {
-      for (let seatNum = 1; seatNum <= 30; seatNum += 1) {
-        seats.push({
-          id: `${row}-${seatNum}`,
-          label: `${row}${seatNum}`,
-          tierId: tier.id,
-          row: row,
-          num: seatNum
-        });
-      }
-    });
+  const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+  return rows.map((row, index) => {
+    const distance = Math.abs(index - 4);
+    return {
+      row,
+      inset: 18 + distance * 26,
+      lift: distance * -5,
+      seats: Array.from({ length: 30 }, (_, seatIndex) => ({
+        id: `${row}-${seatIndex + 1}`,
+        label: `${row}${seatIndex + 1}`,
+        number: seatIndex + 1,
+        tierId: seatTierByRow(row)
+      }))
+    };
   });
-  return seats;
 };
 
 const seatMap = buildSeatMap();
 
-const renderPaymentSummary = () => {
-  const summary = document.getElementById('payment-race-summary');
-  const total = document.getElementById('payment-total');
-  if (!summary || !total || !paymentState.race) return;
-
-  const tier = getCurrentTier();
-  summary.innerHTML = `
-    <p><strong>${t('payment.race')}:</strong> ${paymentState.race.name}</p>
-    <p><strong>${t('labels.location')}:</strong> ${paymentState.race.location}</p>
-    <p><strong>${t('payment.seat')}:</strong> ${paymentState.seatLabel || '—'}</p>
-  `;
-  total.innerHTML = `<p><strong>${t('payment.total')}:</strong> $${tier.price}</p>`;
-};
-
 const renderTierChoices = () => {
   const container = document.getElementById('payment-tier-choice');
   if (!container) return;
+  container.innerHTML = PAYMENT_TIERS.map((tier) => `
+    <label class="tier-minimal ${tier.id === paymentState.tierId ? 'active' : ''}">
+      <input type="radio" name="ticketTier" value="${tier.id}" ${tier.id === paymentState.tierId ? 'checked' : ''} />
+      <span class="tier-minimal-head">
+        <i class="tier-swatch" style="background:${tier.color}"></i>
+        <strong>${getLocalizedTierLabel(tier.id)}</strong>
+      </span>
+      <small>$${tier.price}</small>
+    </label>
+  `).join('');
 
-  container.innerHTML = paymentTierConfig()
-    .map(
-      (tier) => `
-      <label class="tier-option ${tier.id === paymentState.tierId ? 'active' : ''}">
-        <input type="radio" name="tierId" value="${tier.id}" ${tier.id === paymentState.tierId ? 'checked' : ''} />
-        <span class="tier-chip" style="background:${tier.color}">${tier.label}</span>
-        <small>${tier.desc}</small>
-        <strong>$${tier.price}</strong>
-      </label>
-    `
-    )
-    .join('');
-
-  container.querySelectorAll('input[name="tierId"]').forEach((input) => {
+  container.querySelectorAll('input[name="ticketTier"]').forEach((input) => {
     input.addEventListener('change', () => {
       paymentState.tierId = input.value;
-      paymentState.seatId = null;
+      paymentState.seatId = '';
       paymentState.seatLabel = '';
+      paymentState.clusterLabel = '';
       renderTierChoices();
       renderSeatGrid();
       renderPaymentSummary();
@@ -834,471 +915,573 @@ const renderTierChoices = () => {
 
 const renderSeatGrid = () => {
   const grid = document.getElementById('seat-grid');
-  if (!grid) return;
-  const selectedTier = getCurrentTier();
-  const bookedSeats = paymentState.race?.bookedSeats || [];
+  if (!grid || !paymentState.race) return;
+  const booked = new Set(paymentState.race.bookedSeats || []);
+  const currentTier = getTierConfig();
+  grid.className = `seat-map-wrapper current-tier-${currentTier.id}`;
+  grid.innerHTML = `
+    ${seatMap.map((row, rowIndex) => `
+    <div class="seat-row" style="--arc-inset:${row.inset}px; --row-lift:${row.lift}px;">
+      <div class="seat-row-label">${row.row}</div>
+      <div class="seat-row-content tier-${seatTierByRow(row.row)}">
+        <div class="seat-row-seats">
+          ${Array.from({ length: 6 }, (_, clusterIndex) => {
+            const groupSeats = row.seats.slice(clusterIndex * 5, clusterIndex * 5 + 5);
+            const groupClass =
+              clusterIndex === 2 ? ' is-center-left' : clusterIndex === 3 ? ' is-center-right' : '';
+            const startSeat = clusterIndex * 5 + 1;
+            const endSeat = startSeat + 4;
+            const seatsHtml = groupSeats.map((seat) => {
+              const disabled = seat.tierId !== currentTier.id || booked.has(seat.id);
+              const selected = paymentState.seatId === seat.id;
+              const classes = ['seat-btn', `tier-${seat.tierId}`];
+              if (selected) classes.push('selected');
+              if (booked.has(seat.id)) classes.push('booked');
+              return `<button type="button" class="${classes.join(' ')}" data-seat-id="${seat.id}" title="${seat.label}" ${disabled ? 'disabled' : ''}>${seat.number}</button>`;
+            }).join('');
+            const aisle =
+              clusterIndex === 5
+                ? ''
+                : clusterIndex === 2
+                  ? '<span class="seat-aisle seat-aisle-wide" aria-hidden="true"></span>'
+                  : '<span class="seat-aisle" aria-hidden="true"></span>';
+            return `
+              <div class="seat-cluster-stack${groupClass}">
+                <span class="seat-cluster-label">
+                  <strong>${row.row}${clusterIndex + 1}</strong>
+                  <small>${startSeat}-${endSeat}</small>
+                </span>
+                <div class="seat-cluster-group">${seatsHtml}</div>
+              </div>
+              ${aisle}
+            `;
+          }).join('')}
+        </div>
+      </div>
+      ${[2, 5].includes(rowIndex) ? '<div class="seat-horizontal-aisle" aria-hidden="true"></div>' : ''}
+    </div>
+  `).join('')}
+  `;
 
-  const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
-  let html = '';
-
-  rows.forEach(row => {
-    // Add row header
-    html += `<div class="seat-row-header" data-row="${row}">${row}</div>`;
-    
-    // Add 30 seats for this row
-    const rowSeats = seatMap.filter(s => s.row === row);
-    rowSeats.forEach(seat => {
-      const isOtherTier = seat.tierId !== selectedTier.id;
-      const isBooked = bookedSeats.includes(seat.id);
-      const disabled = isOtherTier || isBooked;
-      const selected = paymentState.seatId === seat.id;
-      
-      html += `
-        <button type="button" 
-          class="seat-btn ${selected ? 'selected' : ''} ${isBooked ? 'booked' : ''} tier-${seat.tierId}" 
-          data-seat-id="${seat.id}" 
-          data-row="${row}"
-          title="${seat.label} (${seat.tierId})"
-          ${disabled ? 'disabled' : ''}>
-          ${seat.num}
-        </button>
-      `;
-    });
-  });
-
-  grid.innerHTML = html;
-
-  grid.querySelectorAll('button[data-seat-id]:not([disabled])').forEach((button) => {
+  grid.querySelectorAll('[data-seat-id]:not([disabled])').forEach((button) => {
     button.addEventListener('click', () => {
       paymentState.seatId = button.getAttribute('data-seat-id');
-      const seat = seatMap.find(s => s.id === paymentState.seatId);
-      paymentState.seatLabel = seat ? seat.label : '';
+      paymentState.seatLabel = button.getAttribute('title') || '';
+      paymentState.clusterLabel = getSeatClusterLabel(paymentState.seatId);
       renderSeatGrid();
       renderPaymentSummary();
     });
   });
+
+  syncSeatScrollbar();
 };
 
-const openPaymentModal = (race) => {
-  paymentState.race = race;
-  paymentState.tierId = 'premium';
-  paymentState.seatId = null;
-  paymentState.seatLabel = '';
+const renderPaymentSummary = () => {
+  const summary = document.getElementById('payment-summary');
+  if (!summary || !paymentState.race) return;
+  const tier = getTierConfig();
+  summary.innerHTML = `
+    <p><strong>${t('payment.race')}:</strong> ${paymentState.race.name}</p>
+    <p><strong>${t('tickets.code')}:</strong> ${paymentState.ticketId || '-'}</p>
+    <p><strong>${t('payment.tier')}:</strong> ${getLocalizedTierLabel(tier.id)}</p>
+    <p><strong>${t('payment.seat')}:</strong> ${paymentState.seatLabel || '-'}</p>
+    <p><strong>${t('payment.cluster')}:</strong> ${paymentState.clusterLabel || '-'}</p>
+    <p><strong>${t('payment.total')}:</strong> $${tier.price}</p>
+  `;
+};
+
+const renderTicketsList = () => {
+  const list = document.getElementById('tickets-list');
+  if (!list) return;
+
+  const store = getTicketStore();
+  const renderTicketCard = (ticket, inHistory = false) => `
+    <article class="ticket-item">
+      <div class="ticket-info">
+        <strong>${ticket.raceName}</strong>
+        <p><strong>${t('tickets.code')}:</strong> ${ticket.ticketId}</p>
+        <p><strong>${t('tickets.tier')}:</strong> ${ticket.tierLabel || '-'}</p>
+        <p><strong>${t('tickets.seat')}:</strong> ${ticket.seatNumber || '-'}</p>
+        <p><strong>${t('tickets.cluster')}:</strong> ${ticket.clusterLabel || getSeatClusterLabel(ticket.seatNumber) || '-'}</p>
+        <p><strong>${t('tickets.status')}:</strong> <span class="status-badge ${inHistory ? 'paid' : 'pending'}">${inHistory ? t('tickets.statusPaid') : t('tickets.statusPending')}</span></p>
+        <p class="ticket-price">${ticket.priceLabel || `$${ticket.price}`}</p>
+      </div>
+      <div class="ticket-actions">
+        ${inHistory ? `<button type="button" class="ghost-button" data-ticket-pdf="${ticket.ticketId}">${t('tickets.invoice')}</button>` : `<button type="button" class="primary-button" data-ticket-pay="${ticket.ticketId}">${t('tickets.pay')}</button>`}
+        <button type="button" class="ghost-button danger" data-ticket-remove="${ticket.ticketId}" data-ticket-bucket="${inHistory ? 'history' : 'cart'}">${t('tickets.remove')}</button>
+      </div>
+    </article>
+  `;
+
+  list.innerHTML = `
+    <section class="tickets-section">
+      <h4>${t('tickets.cartTitle')}</h4>
+      <div class="tickets-scroll">
+        ${store.cart.length ? store.cart.map((ticket) => renderTicketCard(ticket)).join('') : `<p class="empty-msg">${t('tickets.empty')}</p>`}
+      </div>
+    </section>
+    <section class="tickets-section history">
+      <h4>${t('tickets.historyTitle')}</h4>
+      <div class="tickets-scroll">
+        ${store.history.length ? store.history.map((ticket) => renderTicketCard(ticket, true)).join('') : `<p class="empty-msg">${t('tickets.historyEmpty')}</p>`}
+      </div>
+    </section>
+  `;
+
+  list.querySelectorAll('[data-ticket-remove]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const bucket = button.getAttribute('data-ticket-bucket');
+      const id = button.getAttribute('data-ticket-remove');
+      const nextStore = getTicketStore();
+      nextStore[bucket] = nextStore[bucket].filter((ticket) => ticket.ticketId !== id);
+      saveTicketStore(nextStore);
+      updateTicketsCount();
+      renderTicketsList();
+    });
+  });
+
+  list.querySelectorAll('[data-ticket-pay]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const ticketId = button.getAttribute('data-ticket-pay');
+      const ticket = getTicketStore().cart.find((item) => item.ticketId === ticketId);
+      if (!ticket) return;
+      const races = await fetchJson('/api/featured-races');
+      const race = races.find((item) => item.id === ticket.raceId);
+      if (!race) return;
+      closeModal('tickets-modal');
+      openPaymentModal(race, { mode: 'cart', ticketId: ticket.ticketId, tierId: ticket.tierId || 'premium' });
+    });
+  });
+
+  list.querySelectorAll('[data-ticket-pdf]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const ticket = getTicketStore().history.find((item) => item.ticketId === button.getAttribute('data-ticket-pdf'));
+      if (ticket) generateInvoice(ticket);
+    });
+  });
+};
+
+const resetPaymentForm = () => {
   const form = document.getElementById('payment-form');
-  if (form) {
-    form.reset();
-  }
+  if (form) form.reset();
+  paymentState.paymentMethod = 'visa_master';
+  paymentState.clusterLabel = '';
+  toggleCardFields();
+};
+
+const openPaymentModal = (race, options = {}) => {
+  const user = getCurrentUser();
+  paymentState.race = race;
+  paymentState.mode = options.mode || 'buy-now';
+  paymentState.ticketId = options.ticketId || generateTicketId();
+  paymentState.tierId = options.tierId || 'premium';
+  paymentState.seatId = '';
+  paymentState.seatLabel = '';
+  resetPaymentForm();
+
+  const nameInput = document.getElementById('payment-customer');
+  const emailInput = document.getElementById('payment-email');
+  if (nameInput) nameInput.value = user?.name || '';
+  if (emailInput) emailInput.value = user?.email || '';
+
   renderTierChoices();
   renderSeatGrid();
   renderPaymentSummary();
   openModal('payment-modal');
 };
 
-const getCountdownParts = (targetDate) => {
-  const now = new Date();
-  const distance = targetDate - now;
-
-  if (distance <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0, live: true };
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
-
-  return { days, hours, minutes, seconds, live: false };
+const toggleCardFields = () => {
+  const cardFields = document.getElementById('card-fields');
+  const method = document.querySelector('input[name="paymentMethod"]:checked')?.value || 'visa_master';
+  paymentState.paymentMethod = method;
+  if (!cardFields) return;
+  cardFields.classList.toggle('is-hidden', method === 'paypal');
+  cardFields.querySelectorAll('input').forEach((input) => {
+    input.required = method !== 'paypal';
+  });
 };
 
-const renderFeaturedRaces = (races) => {
-  const container = document.getElementById('featured-races');
-  if (!container) {
+const normalizeCardNumber = (value) => value.replace(/\D/g, '').slice(0, 16).replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+
+const addTicketToCart = (race) => {
+  const store = getTicketStore();
+  store.cart.push({
+    ticketId: generateTicketId(),
+    raceId: race.id,
+    raceName: race.name,
+    tierId: 'premium',
+    tierLabel: 'Pending selection',
+    seatNumber: '',
+    status: 'pending',
+    priceLabel: '$95 - $220',
+    createdAt: new Date().toISOString()
+  });
+  saveTicketStore(store);
+  updateTicketsCount();
+  renderTicketsList();
+  showToast(t('toast.cartAdded'));
+};
+
+const buildHistoryTicket = (ticketBase, customerName) => {
+  const tier = getTierConfig();
+  return {
+    ...ticketBase,
+    ticketId: ticketBase.ticketId || generateTicketId(),
+    tierId: tier.id,
+    tierLabel: getLocalizedTierLabel(tier.id),
+    seatNumber: paymentState.seatLabel,
+    clusterLabel: paymentState.clusterLabel || getSeatClusterLabel(paymentState.seatId),
+    price: tier.price,
+    priceLabel: `$${tier.price}`,
+    customerName,
+    purchasedAt: formatInvoiceTimestamp()
+  };
+};
+
+const submitPayment = async (event) => {
+  event.preventDefault();
+  if (!paymentState.race || !paymentState.seatId) {
+    showToast(t('toast.chooseSeat'));
     return;
   }
-  container.innerHTML = races
-    .map(
-      (race) => `
-      <article class="card race-card">
-        <div class="card-top">
-          <span class="schedule-tag">${t('labels.schedule')}</span>
-          <span class="schedule-date">
-            <span class="schedule-label">${t('labels.startsOn')}</span>
-            ${formatRaceDate(race.date)}
-          </span>
-        </div>
-        <div class="media-frame">
-          <img src="${withFallback(race.imageUrl)}" alt="${race.name}" loading="lazy" data-fallback="logo" ${race.imageUrl ? '' : `data-image-title="${race.imageTitle || race.name}"`} />
-        </div>
-        <div>
-          <h3>${race.name}</h3>
-          <p>${race.location}</p>
-        </div>
-        <div class="meta">
-          <span>${race.distance}</span>
-          <span>${race.horses} ${t('labels.horsesCount')}</span>
-        </div>
-        <p class="countdown" data-date="${race.date}">${t('labels.countdown')}: --</p>
-        <p>${t('labels.seatsLeft')}: <strong>${race.seatsRemaining}</strong></p>
-        <p class="price">$${race.priceUSD}</p>
-        <button class="primary-button" data-race-id="${race.id}">${t('labels.buyTicket')}</button>
-      </article>
-    `
-    )
-    .join('');
-  applyImageFallbacks();
-  loadWikipediaImages();
 
-  container.querySelectorAll('button[data-race-id]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const raceId = button.getAttribute('data-race-id');
-      const race = races.find((item) => item.id === raceId);
-      if (!race) {
-        showToast(t('toast.purchaseError'));
-        return;
+  const customerName = document.getElementById('payment-customer')?.value.trim();
+  const address = document.getElementById('payment-address')?.value.trim();
+  const email = document.getElementById('payment-email')?.value.trim();
+  const cardholder = document.getElementById('payment-cardholder')?.value.trim();
+  const cardNumber = document.getElementById('payment-cardnumber')?.value.trim();
+  const cvv = document.getElementById('payment-cvv')?.value.trim();
+  const expiryMonth = document.getElementById('payment-expiry-month')?.value.trim();
+  const expiryYear = document.getElementById('payment-expiry-year')?.value.trim();
+
+  if (!customerName || !address || !email) {
+    showToast(t('toast.purchaseError'));
+    return;
+  }
+
+  if (paymentState.paymentMethod === 'visa_master') {
+    const rawCard = cardNumber.replace(/\s/g, '');
+    if (!cardholder || rawCard.length !== 16 || cvv.length !== 3 || expiryMonth.length !== 2 || expiryYear.length !== 2) {
+      showToast(t('toast.purchaseError'));
+      return;
+    }
+  }
+
+  const response = await fetch('/api/purchase', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      raceId: paymentState.race.id,
+      tierId: paymentState.tierId,
+      quantity: 1,
+      paymentMethod: paymentState.paymentMethod,
+      seatId: paymentState.seatId,
+      paymentDetails: {
+        customerName,
+        address,
+        email,
+        cardholder,
+        cardNumber,
+        cvv,
+        expiryDate: `${expiryMonth}-${expiryYear}`
       }
-      openPaymentModal(race);
-    });
+    })
   });
+  const data = await response.json();
+  if (!response.ok) {
+    showToast(data.message || t('toast.purchaseError'));
+    return;
+  }
+
+  const store = getTicketStore();
+  if (paymentState.mode === 'cart') {
+    const ticket = store.cart.find((item) => item.ticketId === paymentState.ticketId);
+    if (!ticket) return;
+    store.cart = store.cart.filter((item) => item.ticketId !== paymentState.ticketId);
+    store.history.unshift(buildHistoryTicket(ticket, customerName));
+  } else {
+    store.history.unshift(buildHistoryTicket({
+      ticketId: paymentState.ticketId,
+      raceId: paymentState.race.id,
+      raceName: paymentState.race.name
+    }, customerName));
+  }
+
+  saveTicketStore(store);
+  updateTicketsCount();
+  renderTicketsList();
+  closeModal('payment-modal');
+  showToast(t('toast.purchaseOk'));
+  await fetchFeaturedRaces(true);
+};
+
+const generateInvoice = async (ticket) => {
+  const JsPdf = window.jspdf?.jsPDF;
+  if (!JsPdf) {
+    showToast('jsPDF not loaded.');
+    return;
+  }
+
+  if (document.fonts?.ready) {
+    try {
+      await document.fonts.ready;
+    } catch (error) {
+      // Ignore font readiness failures and continue with available fonts.
+    }
+  }
+
+  const width = 1240;
+  const height = 1754;
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = '#f5ecdf';
+  ctx.fillRect(0, 0, width, height);
+  ctx.fillStyle = '#4b2f1d';
+  ctx.fillRect(80, 80, width - 160, height - 160);
+  ctx.fillStyle = '#f5ecdf';
+  ctx.fillRect(96, 96, width - 192, height - 192);
+
+  ctx.fillStyle = '#d3a14b';
+  ctx.fillRect(120, 126, 110, 110);
+  ctx.fillStyle = '#4b2f1d';
+  ctx.font = "700 54px 'Be Vietnam Pro', 'Times New Roman', serif";
+  ctx.fillText('RR', 147, 196);
+  ctx.font = "700 42px 'Be Vietnam Pro', 'Times New Roman', serif";
+  ctx.fillText('ROYAL RACING', 270, 180);
+  ctx.font = "18px 'Be Vietnam Pro', 'Times New Roman', serif";
+  ctx.fillStyle = '#7a5a40';
+  ctx.fillText(t('invoice.title'), 272, 210);
+
+  ctx.strokeStyle = '#d3a14b';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(120, 270);
+  ctx.lineTo(width - 120, 270);
+  ctx.stroke();
+
+  const lines = [
+    [t('invoice.customer'), ticket.customerName || 'N/A'],
+    [t('invoice.ticketId'), ticket.ticketId || 'N/A'],
+    [t('invoice.amount'), ticket.priceLabel || ('$' + (ticket.price || 0))],
+    [t('invoice.ticketType'), ticket.tierLabel || 'N/A'],
+    [t('invoice.seatNumber'), ticket.seatNumber || 'N/A'],
+    [t('invoice.cluster'), ticket.clusterLabel || getSeatClusterLabel(ticket.seatNumber) || 'N/A'],
+    [t('invoice.timestamp'), ticket.purchasedAt || formatInvoiceTimestamp()]
+  ];
+
+  let y = 360;
+  lines.forEach(([label, value]) => {
+    ctx.fillStyle = '#4b2f1d';
+    ctx.font = "700 24px 'Be Vietnam Pro', 'Times New Roman', serif";
+    ctx.fillText(`${label}:`, 150, y);
+    ctx.font = "20px 'Be Vietnam Pro', 'Times New Roman', serif";
+    ctx.fillText(String(value), 350, y);
+    ctx.strokeStyle = 'rgba(75, 47, 29, 0.16)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(150, y + 20);
+    ctx.lineTo(width - 150, y + 20);
+    ctx.stroke();
+    y += 110;
+  });
+
+  ctx.fillStyle = '#7a5a40';
+  ctx.font = "italic 20px 'Be Vietnam Pro', 'Times New Roman', serif";
+  ctx.fillText(t('invoice.thanks'), 150, height - 220);
+
+  const doc = new JsPdf({ unit: 'pt', format: 'a4' });
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+  doc.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, pageWidth, pageHeight);
+  doc.save(`invoice-${ticket.ticketId}.pdf`);
+  showToast(t('toast.invoiceReady'));
 };
 
 const updateCountdowns = () => {
-  document.querySelectorAll('.countdown[data-date]').forEach((node) => {
-    const date = new Date(node.getAttribute('data-date'));
-    const parts = getCountdownParts(date);
-    if (parts.live) {
-      node.textContent = t('labels.liveNow');
+  document.querySelectorAll('[data-date]').forEach((node) => {
+    const target = new Date(node.getAttribute('data-date'));
+    const diff = target - new Date();
+    if (diff <= 0) {
+      node.textContent = `${t('labels.countdown')}: ${t('labels.liveNow')}`;
       return;
     }
-    node.textContent = `${t('labels.countdown')}: ${parts.days}d ${parts.hours}h ${parts.minutes}m`;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+    node.textContent = `${t('labels.countdown')}: ${days}${t('labels.days')} ${hours}${t('labels.hours')} ${mins}${t('labels.mins')} ${secs}${t('labels.secs')}`;
   });
-
-  const panel = document.getElementById('next-race-panel');
-  if (panel && panel.dataset.date) {
-    const date = new Date(panel.dataset.date);
-    const parts = getCountdownParts(date);
-    const daysNode = panel.querySelector('[data-unit="days"]');
-    const hoursNode = panel.querySelector('[data-unit="hours"]');
-    const minsNode = panel.querySelector('[data-unit="mins"]');
-    const secsNode = panel.querySelector('[data-unit="secs"]');
-    if (daysNode) daysNode.textContent = parts.days;
-    if (hoursNode) hoursNode.textContent = parts.hours;
-    if (minsNode) minsNode.textContent = parts.minutes;
-    if (secsNode) secsNode.textContent = parts.seconds;
-  }
 };
 
 const renderNextRacePanel = (race) => {
   const panel = document.getElementById('next-race-panel');
-  if (!panel) {
-    return;
+  if (!panel || !race) return;
+  const hero = document.querySelector('.hero-luxury');
+  if (hero && race.imageUrl) {
+    hero.style.backgroundImage = `linear-gradient(rgba(53, 33, 19, 0.45), rgba(53, 33, 19, 0.7)), url('${race.imageUrl}')`;
+    hero.style.backgroundSize = 'cover';
+    hero.style.backgroundPosition = 'center';
   }
-
-  panel.dataset.date = race.date;
-  const year = new Date(race.date).getFullYear();
-  const raceTitle = `${race.name} ${year}`.toUpperCase();
-  const raceLocation = race.location.toUpperCase();
-
   panel.innerHTML = `
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="logo-icon">🏁</span>
-        <span data-i18n="labels.nextRace">UPCOMING PREMIER EVENT</span>
+    <div class="next-race-card">
+      <div class="next-race-media">
+        <img src="${withFallback(race.imageUrl)}" alt="${race.name}" loading="lazy" />
       </div>
-      <h1 class="luxury-title">${raceTitle}</h1>
-      <p class="hero-slogan">${raceLocation}</p>
-      
-      <div class="countdown-inline">
-        <div class="inline-wrap">
-          <div class="countdown-grid-main">
-            <div class="countdown-box-main">
-              <span class="value" data-unit="days">00</span>
-              <span class="unit">DAYS</span>
-            </div>
-            <div class="countdown-box-main">
-              <span class="value" data-unit="hours">00</span>
-              <span class="unit">HRS</span>
-            </div>
-            <div class="countdown-box-main">
-              <span class="value" data-unit="mins">00</span>
-              <span class="unit">MINS</span>
-            </div>
-            <div class="countdown-box-main">
-              <span class="value" data-unit="secs">00</span>
-              <span class="unit">SECS</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-actions" style="margin-top: 32px; display: flex; justify-content: center;">
-        <button class="primary-button" data-race-id="${race.id}" style="padding: 16px 48px; font-size: 1.1rem; letter-spacing: 1px;">
-          ${t('labels.buyTicket').toUpperCase()}
-        </button>
-      </div>
+      <p class="eyebrow">${t('labels.schedule')}</p>
+      <h2>${race.name}</h2>
+      <p>${race.location}</p>
+      <p data-date="${race.date}">${t('labels.countdown')}</p>
+      <button class="primary-button" type="button" data-buy-race="${race.id}">${t('labels.buyNow')}</button>
     </div>
   `;
-
-  panel.querySelector('button[data-race-id]').addEventListener('click', () => {
-    openPaymentModal(race);
-  });
+  panel.querySelector('[data-buy-race]')?.addEventListener('click', () => openPaymentModal(race, { mode: 'buy-now' }));
 };
 
-const renderTicketTiers = (tiers) => {
-  const container = document.getElementById('ticket-tiers-grid');
-  if (!container) {
-    return;
-  }
-  container.innerHTML = tiers
-    .map(
-      (tier) => `
-      <article class="tier-card">
-        <span style="background:${tier.color}; color: #fff;">${tier.label}</span>
-        <h3>$${tier.priceUSD}</h3>
-        <p>${t('labels.seatsLeft')}: <strong>${tier.seatsRemaining}</strong></p>
-        <p class="payment-note"><strong>${t('labels.paymentMethod')}:</strong> ${t('labels.bankCard')}</p>
-        <button class="ghost-button" data-tier="${tier.id}" data-tier-name="${tier.label}" data-tier-price="${tier.priceUSD}">${t('labels.bookTier')} ${tier.label}</button>
-      </article>
-    `
-    )
-    .join('');
+const renderFeaturedRaces = (races) => {
+  const container = document.getElementById('featured-races');
+  if (!container) return;
 
-  container.querySelectorAll('button[data-tier]').forEach((button) => {
-    button.addEventListener('click', async () => {
-      const tierId = button.getAttribute('data-tier');
-      const tierLabel = button.getAttribute('data-tier-name');
-      const tierPrice = button.getAttribute('data-tier-price');
-      const response = await fetch('/api/purchase', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tierId, quantity: 1, paymentMethod: 'bank' })
-      });
+  container.innerHTML = races.map((race) => `
+    <article class="card race-card">
+      <div class="media-frame media-frame-race" data-race-image="${withFallback(race.imageUrl)}"><img src="${withFallback(race.imageUrl)}" alt="${race.name}" loading="lazy" /></div>
+      <div class="race-card-body">
+        <span class="schedule-tag">${t('labels.schedule')}</span>
+        <h3>${race.name}</h3>
+        <p>${race.location}</p>
+        <p>${formatRaceDate(race.date)}</p>
+        <p data-date="${race.date}">${t('labels.countdown')}</p>
+        <p>${t('labels.seatsLeft')}: <strong>${race.seatsRemaining}</strong></p>
+        <p class="price">$${race.priceUSD}</p>
+      </div>
+      <div class="card-actions">
+        <button class="ghost-button" type="button" data-cart-race="${race.id}">${t('labels.addToCart')}</button>
+        <button class="primary-button" type="button" data-buy-race="${race.id}">${t('labels.buyNow')}</button>
+      </div>
+    </article>
+  `).join('');
 
-      const data = await response.json();
-      if (!response.ok) {
-        showToast(data.message || t('toast.purchaseError'));
-        return;
-      }
+  container.querySelectorAll('[data-cart-race]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const race = races.find((item) => item.id === button.getAttribute('data-cart-race'));
+      if (race) addTicketToCart(race);
+    });
+  });
 
-      showToast(t('toast.purchaseOk'));
-      const ticketCode = `RR-${Math.floor(10000 + Math.random() * 90000)}`;
-      addTicket({
-        title: `${tierLabel} ${t('tiers.title')}`,
-        detail: t('tiers.title'),
-        price: tierPrice || '—',
-        ticketCode: ticketCode,
-        seatNumber: 'N/A'
-      });
-      fetchTicketTiers();
+  container.querySelectorAll('.media-frame-race').forEach((frame) => {
+    const imageUrl = frame.getAttribute('data-race-image');
+    if (imageUrl) frame.style.setProperty('--race-bg-image', `url("${imageUrl}")`);
+  });
+
+  container.querySelectorAll('[data-buy-race]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const race = races.find((item) => item.id === button.getAttribute('data-buy-race'));
+      if (race) openPaymentModal(race, { mode: 'buy-now' });
     });
   });
 };
 
-const renderNews = (items) => {
-  const container = document.getElementById('news-grid');
-  if (!container) {
-    return;
-  }
-  container.innerHTML = items
-    .map(
-      (item) => `
-      <article class="news-card">
-        <h3>${item.title}</h3>
-        <p>${item.location} • ${item.source}</p>
-        <p>${item.date}</p>
-      </article>
-    `
-    )
-    .join('');
-};
-
-const renderTable = (containerId, headers, rows) => {
-  const container = document.getElementById(containerId);
-  if (!container) {
-    return;
-  }
-  const headCells = headers.map((header) => `<th>${header}</th>`).join('');
-  const bodyRows = rows
-    .map(
-      (row) =>
-        `<tr>${row.map((cell) => `<td>${cell}</td>`).join('')}</tr>`
-    )
-    .join('');
-
-  container.innerHTML = `
-    <table>
-      <thead><tr>${headCells}</tr></thead>
-      <tbody>${bodyRows}</tbody>
-    </table>
-  `;
-};
-
-const renderHorseCards = (horses) => {
+const renderHorseCards = (items) => {
   const container = document.getElementById('horses-grid');
-  if (!container) {
-    return;
-  }
-
-  container.innerHTML = horses
-    .map(
-      (horse) => `
-      <article class="profile-card">
-        <div class="media-frame">
-          <img src="${withFallback(horse.imageUrl)}" alt="${horse.name}" loading="lazy" data-fallback="logo" ${horse.imageUrl ? '' : `data-image-title="${horse.imageTitle || horse.name}"`} />
-        </div>
-        <div class="profile-header">
-          <div>
-            <h3>${horse.name}</h3>
-            <p>${horse.country} • ${horse.color}</p>
-          </div>
-          <span class="profile-tag">${horse.started}</span>
-        </div>
-        <div class="profile-body">
-          <p><strong>${t('labels.record')}:</strong> ${horse.record}</p>
-          <p><strong>${t('labels.titles')}:</strong> ${horse.titles}</p>
-        </div>
-      </article>
-    `
-    )
-    .join('');
-  applyImageFallbacks();
-  loadWikipediaImages();
+  if (!container) return;
+  container.innerHTML = items.map((horse) => `
+    <article class="profile-card">
+      <div class="media-frame media-frame-horse"><img src="${withFallback(horse.imageUrl)}" alt="${horse.name}" loading="lazy" /></div>
+      <div class="profile-header"><div><h3>${horse.name}</h3><p>${horse.country} | ${horse.color}</p></div></div>
+      <div class="profile-body">
+        <p><strong>${t('labels.record')}:</strong> ${formatHorseRecord(horse.record)}</p>
+        <p><strong>${t('labels.titles')}:</strong> ${horse.titles}</p>
+      </div>
+    </article>
+  `).join('');
 };
 
-const renderJockeyCards = (jockeys) => {
+const renderJockeyCards = (items) => {
   const container = document.getElementById('jockeys-grid');
-  if (!container) {
-    return;
-  }
-
-  container.innerHTML = jockeys
-    .map(
-      (jockey) => `
-      <article class="profile-card">
-        <div class="media-frame">
-          <img src="${withFallback(jockey.imageUrl)}" alt="${jockey.name}" loading="lazy" data-fallback="logo" ${jockey.imageUrl ? '' : `data-image-title="${jockey.imageTitle || jockey.name}"`} />
-        </div>
-        <div class="profile-header">
-          <div>
-            <h3>${jockey.name}</h3>
-            <p>${jockey.birth} • ${jockey.gender}</p>
-          </div>
-          <span class="profile-tag">${jockey.status}</span>
-        </div>
-        <div class="profile-body">
-          <p><strong>${t('labels.started')}:</strong> ${jockey.started}</p>
-          <p><strong>${t('labels.wins')}:</strong> ${jockey.wins}</p>
-          <p><strong>${t('labels.awards')}:</strong> ${jockey.awards}</p>
-        </div>
-      </article>
-    `
-    )
-    .join('');
-  applyImageFallbacks();
-  loadWikipediaImages();
+  if (!container) return;
+  container.innerHTML = items.map((jockey) => `
+    <article class="profile-card">
+      <div class="media-frame media-frame-jockey"><img src="${withFallback(jockey.imageUrl)}" alt="${jockey.name}" loading="lazy" /></div>
+      <div class="profile-header"><div><h3>${jockey.name}</h3><p>${jockey.birth || ''}</p></div></div>
+      <div class="profile-body">
+        <p><strong>${t('labels.started')}:</strong> ${jockey.started}</p>
+        <p><strong>${t('labels.wins')}:</strong> ${formatJockeyWins(jockey.wins)}</p>
+        <p><strong>${t('labels.awards')}:</strong> ${jockey.awards}</p>
+      </div>
+    </article>
+  `).join('');
 };
 
-const renderHallCards = (horses) => {
+const renderHallCards = (items) => {
   const container = document.getElementById('hall-grid');
-  if (!container) {
-    return;
-  }
-
-  container.innerHTML = horses
-    .map(
-      (horse) => `
-      <article class="profile-card">
-        <div class="media-frame">
-          <img src="${withFallback(horse.imageUrl)}" alt="${horse.name}" loading="lazy" data-fallback="logo" ${horse.imageUrl ? '' : `data-image-title="${horse.imageTitle || horse.name}"`} />
-        </div>
-        <div class="profile-header">
-          <div>
-            <h3>${horse.name}</h3>
-            <p>${horse.country} • ${horse.color}</p>
-          </div>
-          <span class="profile-tag">${horse.retired}</span>
-        </div>
-        <div class="profile-body">
-          <p><strong>${t('labels.record')}:</strong> ${horse.record}</p>
-          <p><strong>${t('labels.titles')}:</strong> ${horse.titles}</p>
-          <p><strong>${t('labels.memorial')}:</strong> ${horse.memorial}</p>
-        </div>
-      </article>
-    `
-    )
-    .join('');
-  applyImageFallbacks();
-  loadWikipediaImages();
+  if (!container) return;
+  container.innerHTML = items.map((horse) => `
+    <article class="profile-card">
+      <div class="media-frame media-frame-hall"><img src="${withFallback(horse.imageUrl)}" alt="${horse.name}" loading="lazy" /></div>
+      <div class="profile-header"><div><h3>${horse.name}</h3><p>${horse.country} | ${horse.color}</p></div></div>
+      <div class="profile-body">
+        <p><strong>${t('labels.record')}:</strong> ${formatHorseRecord(horse.record)}</p>
+        <p><strong>${t('labels.titles')}:</strong> ${horse.titles}</p>
+        <p><strong>${t('labels.memorial')}:</strong> ${horse.memorial}</p>
+      </div>
+    </article>
+  `).join('');
 };
 
-const fetchFeaturedRaces = async () => {
-  const response = await fetch('/api/featured-races');
-  const data = await response.json();
-  renderFeaturedRaces(data);
-  const sortedByDate = [...data]
-    .map((race) => ({ ...race, dateObj: new Date(race.date) }))
-    .sort((a, b) => a.dateObj - b.dateObj);
-  const now = new Date();
-  const nextRace = sortedByDate.find((race) => race.dateObj >= now) || sortedByDate[0];
-  if (nextRace) {
-    renderNextRacePanel(nextRace);
+const fetchJson = async (url) => {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Request failed: ${response.status}`);
   }
+  return response.json();
+};
+
+const fetchFeaturedRaces = async (force = false) => {
+  const races = !force && appData.featuredRaces ? appData.featuredRaces : await fetchJson('/api/featured-races');
+  appData.featuredRaces = races;
+  renderFeaturedRaces(races);
+  const sorted = [...races].sort((a, b) => new Date(a.date) - new Date(b.date));
+  const now = new Date();
+  const upcoming = sorted.find((race) => new Date(race.date) >= now) || sorted[0];
+  renderNextRacePanel(upcoming);
+  updateCountdowns();
+  return races;
+};
+
+const fetchHorses = async (force = false) => {
+  const horses = !force && appData.horses ? appData.horses : await fetchJson('/api/horses');
+  appData.horses = horses;
+  renderHorseCards(horses);
+};
+
+const fetchJockeys = async (force = false) => {
+  const jockeys = !force && appData.jockeys ? appData.jockeys : await fetchJson('/api/jockeys');
+  appData.jockeys = jockeys;
+  renderJockeyCards(jockeys);
+};
+
+const fetchHallOfFame = async (force = false) => {
+  const horses = !force && appData.hallOfFame ? appData.hallOfFame : await fetchJson('/api/hall-of-fame');
+  appData.hallOfFame = horses;
+  renderHallCards(horses);
+};
+
+const rerenderLocalizedData = () => {
+  if (appData.featuredRaces) {
+    renderFeaturedRaces(appData.featuredRaces);
+    const sorted = [...appData.featuredRaces].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const upcoming = sorted.find((race) => new Date(race.date) >= new Date()) || sorted[0];
+    renderNextRacePanel(upcoming);
+  }
+  if (appData.horses) renderHorseCards(appData.horses);
+  if (appData.jockeys) renderJockeyCards(appData.jockeys);
+  if (appData.hallOfFame) renderHallCards(appData.hallOfFame);
   updateCountdowns();
 };
 
-const fetchTicketTiers = async () => {
-  const response = await fetch('/api/ticket-tiers');
-  const data = await response.json();
-  renderTicketTiers(data);
-};
-
-const fetchNews = async () => {
-  const response = await fetch('/api/news');
-  const data = await response.json();
-  renderNews(data);
-};
-
-const fetchHorses = async () => {
-  const response = await fetch('/api/horses');
-  const data = await response.json();
-  renderHorseCards(data);
-};
-
-const fetchJockeys = async () => {
-  const response = await fetch('/api/jockeys');
-  const data = await response.json();
-  renderJockeyCards(data);
-};
-
-const fetchHallOfFame = async () => {
-  const response = await fetch('/api/hall-of-fame');
-  const data = await response.json();
-  renderHallCards(data);
-};
-
-const initLanguage = () => {
-  const current = getLanguage();
-  setLanguage(current);
-  renderTicketsList();
-  document.querySelectorAll('.js-language').forEach((select) => {
-    select.addEventListener('change', (event) => {
-      setLanguage(event.target.value);
-      fetchFeaturedRaces();
-      fetchTicketTiers();
-      fetchNews();
-      fetchHorses();
-      fetchJockeys();
-      fetchHallOfFame();
-      renderTicketsList();
-      renderTierChoices();
-      renderSeatGrid();
-      renderPaymentSummary();
-      updateTicketsCount();
-      updateHeaderAuth();
-    });
-  });
-};
-
-const initModals = () => {
+const bindAuthForms = () => {
   document.querySelectorAll('[data-action="tickets"]').forEach((button) => {
     button.addEventListener('click', () => {
       renderTicketsList();
@@ -1315,107 +1498,185 @@ const initModals = () => {
   });
 
   document.querySelectorAll('[data-close]').forEach((button) => {
-    button.addEventListener('click', () => closeModal(button.getAttribute('data-close')));
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-close');
+      if (targetId) closeModal(targetId);
+    });
   });
 
-  const loginForm = document.getElementById('login-form');
-  if (loginForm) {
-    loginForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const identifier = loginForm.querySelector('[name="identifier"]').value;
-      localStorage.setItem('rr-user', JSON.stringify({ name: identifier }));
-      updateHeaderAuth();
-      showToast(t('auth.loginSuccess'));
-      closeModal('login-modal');
-      loginForm.reset();
-    });
-  }
-
-  const signupForm = document.getElementById('signup-form');
-  if (signupForm) {
-    signupForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      showToast(t('auth.signupSuccess'));
-      closeModal('signup-modal');
-      signupForm.reset();
-    });
-  }
-
-  const paymentForm = document.getElementById('payment-form');
-  if (paymentForm) {
-    paymentForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      if (!paymentState.race || !paymentState.seatId) {
-        showToast(t('toast.purchaseError'));
-        return;
+  document.querySelectorAll('.modal').forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal(modal.id);
       }
+    });
+  });
 
-      const customerName = document.getElementById('payment-customer')?.value?.trim();
-      const method = document.querySelector('input[name="paymentMethod"]:checked')?.value;
-      const cardholderName = document.getElementById('payment-cardholder')?.value?.trim();
-      const cardNumber = document.getElementById('payment-cardnumber')?.value?.trim();
-      const cvv = document.getElementById('payment-cvv')?.value?.trim();
-      const expiryDate = document.getElementById('payment-expiry')?.value?.trim();
-      const address = document.getElementById('payment-address')?.value?.trim();
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    document.querySelectorAll('.modal.show').forEach((modal) => closeModal(modal.id));
+  });
 
-      if (!customerName || !method || !cardholderName || !cardNumber || !cvv || !expiryDate || !address) {
-        showToast(t('toast.purchaseError'));
-        return;
-      }
+  document.getElementById('login-form')?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        identifier: form.identifier.value.trim(),
+        password: form.password.value
+      })
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      showToast(data.message || t('toast.purchaseError'));
+      return;
+    }
+    localStorage.setItem('rr-user', JSON.stringify(data.user));
+    form.reset();
+    closeModal('login-modal');
+    updateHeaderAuth();
+    showToast(t('auth.loginSuccess'));
+  });
 
-      const response = await fetch('/api/purchase', {
+  document.getElementById('signup-form')?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        dob: form.dob.value,
+        password: form.password.value
+      })
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      showToast(data.message || t('toast.purchaseError'));
+      return;
+    }
+    localStorage.setItem('rr-user', JSON.stringify(data.user));
+    form.reset();
+    closeModal('signup-modal');
+    updateHeaderAuth();
+    showToast(t('auth.signupSuccess'));
+  });
+
+  document.getElementById('avatar-trigger')?.addEventListener('click', () => {
+    document.getElementById('avatar-upload')?.click();
+  });
+
+  document.getElementById('profile-form')?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const user = getCurrentUser();
+    if (!user) {
+      showToast(t('toast.loginRequired'));
+      return;
+    }
+    const response = await fetch('/api/profile/update', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: user.id,
+        name: document.getElementById('profile-name')?.value.trim(),
+        dob: document.getElementById('profile-dob')?.value
+      })
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      showToast(data.message || t('toast.purchaseError'));
+      return;
+    }
+    localStorage.setItem('rr-user', JSON.stringify(data.user));
+    closeModal('profile-modal');
+    updateHeaderAuth();
+    showToast(t('auth.profileSuccess'));
+  });
+
+  document.getElementById('avatar-upload')?.addEventListener('change', async (event) => {
+    const file = event.target.files?.[0];
+    const user = getCurrentUser();
+    if (!file || !user) return;
+    try {
+      const payload = await prepareAvatarPayload(file);
+      const response = await fetch('/api/upload-avatar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          raceId: paymentState.race.id,
-          tierId: paymentState.tierId,
-          quantity: 1,
-          paymentMethod: method,
-          seatId: paymentState.seatId,
-          paymentDetails: {
-            customerName,
-            cardholderName,
-            cardNumber,
-            cvv,
-            expiryDate,
-            address
-          }
-        })
+        body: JSON.stringify({ userId: user.id, base64: payload })
       });
-
       const data = await response.json();
       if (!response.ok) {
         showToast(data.message || t('toast.purchaseError'));
         return;
       }
+      localStorage.setItem('rr-user', JSON.stringify({ ...data.user, avatar: `${data.avatar}?v=${Date.now()}` }));
+      const preview = document.getElementById('profile-avatar-preview');
+      if (preview) preview.src = `${data.avatar}?v=${Date.now()}`;
+      updateHeaderAuth();
+      showToast(t('auth.avatarSuccess'));
+    } catch (error) {
+      showToast(error.message || t('toast.purchaseError'));
+    } finally {
+      event.target.value = '';
+    }
+  });
 
-      const tier = getCurrentTier();
-      const ticketCode = `RR-${Math.floor(10000 + Math.random() * 90000)}`;
-      addTicket({
-        title: paymentState.race.name,
-        detail: `${customerName} • ${tier.label}`,
-        price: tier.price,
-        ticketCode: ticketCode,
-        seatNumber: paymentState.seatLabel
-      });
-      showToast(t('toast.purchaseOk'));
-      closeModal('payment-modal');
-      paymentForm.reset();
-      fetchTicketTiers();
-      fetchFeaturedRaces();
-    });
-  }
+  document.getElementById('payment-form')?.addEventListener('submit', submitPayment);
+  document.querySelectorAll('input[name="paymentMethod"]').forEach((input) => input.addEventListener('change', toggleCardFields));
+
+  document.getElementById('payment-cardnumber')?.addEventListener('input', (event) => {
+    event.target.value = normalizeCardNumber(event.target.value);
+  });
+  document.getElementById('payment-cvv')?.addEventListener('input', (event) => {
+    event.target.value = event.target.value.replace(/\D/g, '').slice(0, 3);
+  });
+
+  const expiryMonth = document.getElementById('payment-expiry-month');
+  const expiryYear = document.getElementById('payment-expiry-year');
+  expiryMonth?.addEventListener('input', (event) => {
+    event.target.value = event.target.value.replace(/\D/g, '').slice(0, 2);
+    if (event.target.value.length === 2) expiryYear?.focus();
+  });
+  expiryYear?.addEventListener('input', (event) => {
+    event.target.value = event.target.value.replace(/\D/g, '').slice(0, 2);
+  });
+  expiryYear?.addEventListener('keydown', (event) => {
+    if (event.key === 'Backspace' && !event.target.value) expiryMonth?.focus();
+  });
 };
 
-initLanguage();
-initModals();
-fetchFeaturedRaces();
-fetchTicketTiers();
-fetchNews();
-fetchHorses();
-fetchJockeys();
-fetchHallOfFame();
-updateTicketsCount();
-updateHeaderAuth();
+const initLanguage = () => {
+  setLanguage(getLanguage());
+  document.querySelectorAll('.js-language').forEach((select) => {
+    select.addEventListener('change', () => {
+      setLanguage(select.value);
+      rerenderLocalizedData();
+      updateHeaderAuth();
+    });
+  });
+};
 
-setInterval(updateCountdowns, 1000);
+const init = async () => {
+  ensureSharedModals();
+  normalizeStaticDom();
+  initLanguage();
+  bindAuthForms();
+  window.addEventListener('resize', syncSeatScrollbar);
+  updateHeaderAuth();
+  renderTicketsList();
+  renderTierChoices();
+  toggleCardFields();
+  renderLoadingState();
+
+  const startupResults = await Promise.allSettled([fetchFeaturedRaces(), fetchHorses(), fetchJockeys(), fetchHallOfFame()]);
+  if (startupResults.some((result) => result.status === 'rejected')) {
+    showToast(t('toast.loadError'));
+  }
+  updateCountdowns();
+  setInterval(updateCountdowns, 1000);
+};
+
+init();

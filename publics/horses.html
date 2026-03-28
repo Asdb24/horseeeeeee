@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -15,7 +15,7 @@
   <body>
     <header class="site-header">
       <div class="logo">
-        <span class="logo-icon" aria-hidden="true">🏆</span>
+        <span class="logo-icon" aria-hidden="true"></span>
         <span class="logo-text">Royal Racing</span>
       </div>
       <nav class="site-nav">
@@ -27,11 +27,10 @@
       </nav>
       <div class="header-tools">
         <label class="language-select" aria-label="Select language">
-          <span class="globe" aria-hidden="true">🌐</span>
+          <span class="globe" aria-hidden="true"></span>
           <select class="js-language">
             <option value="en">EN</option>
-            <option value="ja">日本語</option>
-            <option value="vi">Tiếng Việt</option>
+            <option value="vi">Ti&#x1EBF;ng Vi&#x1EC7;t</option>
           </select>
         </label>
         <button class="ghost-button" data-action="tickets" data-i18n="header.tickets">My Tickets (0)</button>
@@ -55,62 +54,16 @@
     </main>
 
     <footer class="site-footer">
-      <p data-i18n="footer.copy">© 2025 Royal Racing. Built for verified racing fans worldwide.</p>
+      <p data-i18n="footer.copy">&copy; 2026 Royal Racing. Built for verified racing fans worldwide.</p>
     </footer>
 
-    <div class="modal" id="tickets-modal" aria-hidden="true">
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3 data-i18n="tickets.title">My Tickets</h3>
-          <button class="icon-button" data-close="tickets-modal">✕</button>
-        </div>
-        <div class="modal-body" id="tickets-list"></div>
-      </div>
-    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <div class="modal" id="login-modal" aria-hidden="true">
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3 data-i18n="auth.loginTitle">Login</h3>
-          <button class="icon-button" data-close="login-modal">✕</button>
-        </div>
-        <form class="modal-body form-grid" id="login-form">
-          <label>
-            <span data-i18n="auth.userLabel">Username or email</span>
-            <input type="text" name="identifier" required />
-          </label>
-          <label>
-            <span data-i18n="auth.passwordLabel">Password</span>
-            <input type="password" name="password" required />
-          </label>
-          <button class="primary-button" type="submit" data-i18n="auth.loginButton">Login</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="modal" id="signup-modal" aria-hidden="true">
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3 data-i18n="auth.signupTitle">Sign up</h3>
-          <button class="icon-button" data-close="signup-modal">✕</button>
-        </div>
-        <form class="modal-body form-grid" id="signup-form">
-          <label>
-            <span data-i18n="auth.emailLabel">Email or username</span>
-            <input type="text" name="email" required />
-          </label>
-          <label>
-            <span data-i18n="auth.phoneLabel">Phone number</span>
-            <input type="tel" name="phone" required />
-          </label>
-          <label>
-            <span data-i18n="auth.passwordLabel">Password</span>
-            <input type="password" name="password" required />
-          </label>
-          <button class="primary-button" type="submit" data-i18n="auth.signupButton">Create account</button>
-        </form>
-      </div>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
+
+
+
+
